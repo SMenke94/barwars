@@ -15,4 +15,8 @@ module ApplicationHelper
   def devise_mapping
     @devise_mapping ||= Devise.mappings[:user]
   end
+
+  def render_square_logo
+    render 'shared/logo' unless params[:controller] == 'deals' && params[:action] == 'index'
+  end
 end
