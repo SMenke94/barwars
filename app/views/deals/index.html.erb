@@ -2,29 +2,30 @@
   <h1 class="subtitle-index">Bar deals</h1>
 
   <!-- Filter toggle button -->
-  <div id="filter-button" class="filter text-center">
-    <div class="options-icon">
-      <div class="line-container">
-        <div class="filter-line"></div>
-        <div class="circle"></div>
+  <%= link_to "#" do %>
+    <div id="filter-button" class="filter text-center">
+      <div class="options-icon">
+        <div class="line-container">
+          <div class="filter-line"></div>
+          <div class="circle"></div>
+        </div>
+        <div class="line-container">
+          <div class="filter-line"></div>
+          <div class="circle"></div>
+        </div>
+        <div class="line-container">
+          <div class="filter-line"></div>
+          <div class="circle"></div>
+        </div>
       </div>
-      <div class="line-container">
-        <div class="filter-line"></div>
-        <div class="circle"></div>
-      </div>
-      <div class="line-container">
-        <div class="filter-line"></div>
-        <div class="circle"></div>
-      </div>
+      <p>Filter</p>
     </div>
-    <p>Filter</p>
-  </div>
+  <% end %>
 
-  <!-- Filters -->
-    <div id="show-filters" class="text-center transition hide-filter">
-      Add a lot of filters
-    </div>
-  </div> <!-- Closing header container -->
+  <!-- Filters box-->
+  <%= render 'shared/filter-box' %>
+
+</div> <!-- Closing header container -->
 
   <!-- Cards -->
   <div class="deal-wrapper">
@@ -33,8 +34,8 @@
         <% 3.times do %>
         <div class="col-xs-4">
           <div class="deal-info deal-bg-img" style="background-image: url('https://img.myswitzerland.com/mys/38578/images/buehne/blue02-1.jpg');">
-            <div class="like-icon">
-              <i class="fas fa-heart"></i>
+            <div class="type-icon">
+              <i class="fas fa-beer"></i>
             </div>
             <div class="bar-name">
              <p>Bar name</p>
@@ -54,7 +55,12 @@
                 <p class="footing">17.00</p>
               </li>
             </ul>
-            <%= link_to "Happy hour 200dkk", "#", id: "bar-button"  %>
+            <%= link_to "#", class: "deal-bar-button" do %>
+              <div id="bar-button">
+                <h4 class="deal-heading">Happy Hour <span class="deal-price">130DKK</span></h4>
+                <p class="deal-footing">All drinks on the menu</p>
+              </div>
+            <% end %>
           </div>
         </div>
       </div>
@@ -81,11 +87,9 @@
 </div>
 
 <!-- Back to top button -->
-<a href="javascript:" id="return-to-top"><i class="fas fa-chevron-up"></i>
-
-</a>
-
-
+<%= link_to "#", id: "return-to-top" do %>
+  <i class="fas fa-chevron-up"></i>
+<% end %>
 
 
 

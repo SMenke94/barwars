@@ -62,11 +62,9 @@
 }
 
 .heading {
-  text-align: center;
   color: #455d7a;
   text-transform: uppercase;
   font-size: 20px;
-  letter-spacing: 1.5px;
   margin-bottom: 2px;
 }
 
@@ -77,19 +75,18 @@
   text-align: center;
   font-size: 15px;
   margin-bottom: 10px;
-  margin-left: -10px;
 }
 
 #button-link {
   text-decoration: none;
 }
 
-.like-icon {
-  color: rgba(200,200,200,0.4);
+.type-icon {
+  color: white;
   font-size: 25px;
   position: absolute;
-  top: 10px;
-  left: 460px;
+  top: 5px;
+  left: 10px;
   transition: 0.4s ease;
 }
 
@@ -98,26 +95,41 @@
 }
 
 #bar-button {
+  line-height: 0px;
   position: relative;
-  min-width: 300px;
   margin: 0 auto;
-  padding: 12px 20px;
+  padding: 5px 0px;
   text-align: center;
-  border: 3px solid #233142;
-  background: #455d7a;
+  border: 3px solid #ffe030;
+  background: rgba(35, 49, 66, 0.9);
   color: white;
   font-size: 22px;
   border-radius: 50px;
-  font-family: 'Kreon', serif;
-  transition: .4s ease;
-  top: -10px;
+  top: -30px;
+  .deal-price {
+    color: white;
+  }
+  .deal-heading {
+    text-transform: uppercase;
+    margin: 8px;
+    color: #ffe030;
+  }
+  .deal-footing {
+    color: rgba(240,240,240,1);
+    font-size: 12px;
+    padding-bottom: 5px;
+  }
 }
 
-#bar-button:hover {
+a.deal-bar-button:hover {
   text-decoration: none;
-  box-shadow: 0 0 10px #233142;
-  border: 3px solid #FFFA37;
-  background: #FFFA37;
-  color: #455d7a;
-  cursor: pointer;
 }
+
+.deal-bar-button {
+  transition: all 0.1s ease-in-out;
+}
+
+.deal-bar-button:hover #bar-button {
+  transform: scale(1.03) perspective(1px);
+}
+
