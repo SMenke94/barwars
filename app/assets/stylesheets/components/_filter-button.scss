@@ -4,11 +4,13 @@
 }
 
 #filter-button {
+  cursor: pointer;
   width: 130px;
   height: 50px;
   position: relative;
   margin: 0px auto;
   padding: 10px;
+  margin-bottom: 20px;
   text-align: center;
   border: 3px solid #233142;
   background: #455d7a;
@@ -29,7 +31,6 @@
   left: 15px;
   top: 0px;
   position: absolute;
-  cursor: pointer;
   width: 40px;
 }
 #filter-button:hover .circle, #filter-button:hover .filter-line {
@@ -81,4 +82,24 @@
 .line-container:nth-child(3) .circle {
   left: 50%;
   margin-left: -4px;
+}
+
+#show-filters {
+  box-shadow: 0 0 10px rgba(200,200,200,1);
+  border-radius: 25px;
+  height: 75px;
+  width: 75%;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.transition {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition:all 0.3s ease-in-out;
+  -o-transition:all 0.3s ease-in-out;
+  transition:all 0.3s ease-in-out;
+}
+
+.hide-filter {
+  opacity: 0;
 }

@@ -15,10 +15,12 @@
     <%= render 'shared/flashes' %>
     <%= render 'shared/banner' %>
     <%= yield %>
-    <%= render 'shared/logo' %>
+    <%= render_square_logo %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
     <%= javascript_pack_tag 'stylish-signin-signup' %>
+    <%= javascript_pack_tag 'filter-button' %>
+    <%= javascript_pack_tag 'return-to-top' %>
 
   </body>
 </html>

@@ -1,9 +1,7 @@
 <div class="container">
   <h1 class="subtitle-index">Bar deals</h1>
 
-  <!-- Filter button -->
-
-  <%= link_to "#", "data-toggle": "modal", "data-target": "#filterModal" do %>
+  <!-- Filter toggle button -->
   <div id="filter-button" class="filter text-center">
     <div class="options-icon">
       <div class="line-container">
@@ -19,8 +17,13 @@
         <div class="circle"></div>
       </div>
     </div>
-    <p>Filter</p></div>
-    <% end %>
+    <p>Filter</p>
+  </div>
+
+  <!-- Filters -->
+    <div id="show-filters" class="text-center transition hide-filter">
+      Add a lot of filters
+    </div>
   </div> <!-- Closing header container -->
 
   <!-- Cards -->
@@ -77,7 +80,10 @@
   </div>
 </div>
 
+<!-- Back to top button -->
+<a href="javascript:" id="return-to-top"><i class="fas fa-chevron-up"></i>
 
+</a>
 
 
 
