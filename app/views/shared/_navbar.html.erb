@@ -7,7 +7,7 @@
 
   <!-- Link to weekly deals -->
   <%= link_to weekly_deals_path, class: "weekly-deals-button" do %>
-    <div> <i class="fas fa-info-circle"></i> Weekly deals</div>
+  <div> <i class="fas fa-info-circle"></i> Weekly deals</div>
   <% end %>
   <!-- Right Navigation -->
   <div class="navbar-barwars-right hidden-xs hidden-sm">
@@ -15,26 +15,19 @@
     <% if user_signed_in? %>
 
     <!-- Links when logged in -->
-    <%= link_to "My Deallist", "#", class: "navbar-barwars-item navbar-barwars-link" %>
+    <%= link_to "My deals", dashboard_path, class: "navbar-barwars-item navbar-barwars-link my-deals-button" %>
 
     <!-- Avatar with dropdown menu -->
     <div class="navbar-barwars-item">
       <div class="dropdown">
-        <%= image_tag "http://kitt.lebarwars.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-barwars-menu", "data-toggle" => "dropdown" %>
+        <%= image_tag "https://scontent-ams3-1.xx.fbcdn.net/v/t1.0-9/32497592_10216332285839012_7014404072291696640_n.jpg?_nc_cat=0&oh=1f254c63ad7b10d964f94d0be7bc521e&oe=5BF5D6C4", class: "avatar dropdown-toggle", id: "navbar-barwars-menu", "data-toggle" => "dropdown" %>
         <ul class="dropdown-menu dropdown-menu-right navbar-barwars-dropdown-menu">
           <li>
-            <%= link_to "#" do %>
-            <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to "#" do %>
-            <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
-            <% end %>
+            <%= link_to 'My profile', dashboard_path %>
           </li>
           <li>
             <%= link_to destroy_user_session_path, method: :delete do %>
-            <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+            <%= t(".sign_out", default: "Log out") %>
             <% end %>
           </li>
         </ul>
@@ -45,6 +38,15 @@
     <%= link_to t(".sign_up", default: "Register"), "#", class: "navbar-barwars-item navbar-barwars-link barwars-register", "data-toggle": "modal", "data-target": "#exampleModal" %>
 
     <%= link_to t(".sign_in", default: "LOG IN"), "#", class: "navbar-barwars-item navbar-barwars-link barwars-signin", "data-toggle": "modal", "data-target": "#exampleModal" %>
+
+
+    <%= link_to "#", "data-toggle": "modal", "data-target": "#real-signin" do %>
+      <div> Sign-in</div>
+    <% end %>
+
+    <%= link_to "#", "data-toggle": "modal", "data-target": "#real-signup" do %>
+      <div> Sign-up</div>
+    <% end %>
     <% end %>
   </div>
 
@@ -70,6 +72,22 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content signin">
       <%= render 'shared/design-login-form' %>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="real-signin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content signin">
+      <%= render 'shared/sign-in-form' %>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="real-signup" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content signin">
+      <%= render 'shared/sign-up-form' %>
     </div>
   </div>
 </div>

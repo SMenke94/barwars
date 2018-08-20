@@ -1,0 +1,132 @@
+.profile-wrapper {
+  margin-top: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-info-wrapper {
+  position: relative;
+  border-radius: 3px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-color: rgba(250,250,250,1);
+  color: rgba(50,50,50,1);
+  box-shadow: 0 0 5px rgba(150,150,150,1);
+  height: 400px;
+  width: 250px;
+
+}
+
+.my-deals-wrapper {
+  position: relative;
+  background-color: rgba(250,250,250,1);
+  color: rgba(50,50,50,1);
+  box-shadow: 0 0 5px rgba(200,200,200,1);
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  height: 375px;
+  width: 500px;
+}
+
+.profile-top {
+  position: absolute;
+  width: 100%;
+  height: 125px;
+  background-color: #233142;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.profile-image {
+  border: 1px solid rgba(200,200,200,1);
+  box-shadow: 0 0 5px rgba(150,150,150,1);
+  position: absolute;
+  top: 65px;
+  right: 25%;
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+}
+
+.edit-profile {
+  font-size: 14px;
+  color: white;
+  position: absolute;
+  left: 20px;
+  top: 10px;
+}
+
+
+// Dropdown menu to edit and delete
+
+.profile-menu {
+  color: rgba(220,220,220,1);
+  position: absolute;
+  left: 15px;
+  top: -35px;
+  &:hover {
+    color: white;
+  }
+}
+
+.profile-page.navbar-barwars-dropdown-menu {
+  margin-left: 7px;
+  margin-top: 0px;
+  box-shadow: 1px 1px 4px #E6E6E6;
+  border-color: #E6E6E6;
+}
+
+.profile-page.navbar-barwars-dropdown-menu li > a {
+  transition: color 0.3s ease;
+  font-weight: lighter !important;
+  color: #999999 !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
+  padding: 5px 10px;
+}
+.profile-page.navbar-barwars-dropdown-menu li > a:hover {
+  background: transparent !important;
+  color: black !important;
+}
+.profile-page.navbar-barwars-dropdown-menu:before {
+  content: ' ';
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  left: 10px;
+  top: -6px;
+  background-color: white;
+  transform: rotate(45deg);
+  border-left: 1px solid #E6E6E6;
+  border-top: 1px solid #E6E6E6;
+}
+
+.user-info {
+  font-size: 16px;
+  margin-left: 15px;
+  margin-top: 200px;
+  .label {
+    letter-spacing: 2px;
+    color: #2ca1ea;
+  }
+  .input {
+    margin-bottom: 10px;
+    margin-left: 7px;
+    margin-top: 3px;
+    border-bottom: 1px solid #2ca1ea;
+    width: 200px;
+  }
+}
+
+.my-profile-page {
+  color: white;
+}
+
+.my-deals {
+  margin-left: 25px;
+  width: 225px;
+  color: white;
+  background-color: #233142;
+  padding: 10px 0px;
+}

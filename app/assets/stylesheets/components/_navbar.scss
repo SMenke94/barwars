@@ -24,8 +24,10 @@
 
 /* User Avatar */
 .navbar-barwars .avatar {
-  height: 35px;
-  width: 35px;
+  margin-right: -20px;
+  margin-left: 10px;
+  height: 45px;
+  width: 45px;
   border-radius: 50%;
 }
 
@@ -41,8 +43,6 @@
   cursor: pointer;
   padding: 0 20px;
 }
-
-
 
 /* Navbar link */
 .navbar-barwars-link.barwars-signin {
@@ -158,4 +158,18 @@ a.weekly-deals-button {
 
 .weekly-deals-button:hover .fas.fa-info-circle {
   opacity: 1;
+}
+
+a.my-deals-button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid white;
+  font-size: 14px;
+  color: white;
+  &:hover {
+    text-decoration: none;
+    color: #233142;
+    background-color: white;
+    text-shadow: -0.5px 0 #233142, 0 0.5px #233142, 0.5px 0 #233142, 0 -0.5px #233142;
+  }
 }
