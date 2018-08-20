@@ -4,7 +4,6 @@
 }
 
 #filter-button {
-  cursor: pointer;
   width: 130px;
   height: 50px;
   position: relative;
@@ -85,21 +84,25 @@
 }
 
 #show-filters {
-  box-shadow: 0 0 10px rgba(200,200,200,1);
-  border-radius: 25px;
-  height: 75px;
-  width: 75%;
+  box-shadow: 0 0 10px rgba(35, 49, 66, 1);
+  border-radius: 50px;
+  height: 150px;
+  width: 50%;
   margin: 0 auto;
-  background-color: white;
+  color: white;
+  background: rgba(35, 49, 66, 0.9);
 }
 
-.transition {
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition:all 0.3s ease-in-out;
-  -o-transition:all 0.3s ease-in-out;
-  transition:all 0.3s ease-in-out;
+.slideup, .slidedown {
+  max-height: 0;
+  overflow-y: hidden;
+  -webkit-transition: max-height 0.3s ease-in-out;
+  -moz-transition: max-height 0.3s ease-in-out;
+  -o-transition: max-height 0.3s ease-in-out;
+  transition: max-height 0.3s ease-in-out;
 }
 
-.hide-filter {
-  opacity: 0;
+.slidedown {
+  border: 2px solid rgba(35, 49, 66, 1);
+  max-height: 150px ;
 }
