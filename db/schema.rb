@@ -10,10 +10,58 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_18_104730) do
+ActiveRecord::Schema.define(version: 2018_08_20_111142) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bars", force: :cascade do |t|
+    t.string "opening_hour"
+    t.string "photo"
+    t.string "name"
+    t.string "address"
+    t.string "contact_info"
+    t.boolean "smoking"
+    t.boolean "dancing"
+    t.bigint "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_bars_on_category_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "deals", force: :cascade do |t|
+    t.integer "price"
+    t.string "description"
+    t.time "start_time"
+    t.time "end_time"
+    t.bigint "bar_id"
+    t.bigint "type_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bar_id"], name: "index_deals_on_bar_id"
+    t.index ["type_id"], name: "index_deals_on_type_id"
+  end
+
+  create_table "types", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_deals", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "deal_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["deal_id"], name: "index_user_deals_on_deal_id"
+    t.index ["user_id"], name: "index_user_deals_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +75,9 @@ ActiveRecord::Schema.define(version: 2018_08_18_104730) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bars", "categories"
+  add_foreign_key "deals", "bars"
+  add_foreign_key "deals", "types"
+  add_foreign_key "user_deals", "deals"
+  add_foreign_key "user_deals", "users"
 end

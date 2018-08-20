@@ -1,0 +1,84 @@
+#filter-button p {
+  position: absolute;
+  right: 15px;
+}
+
+#filter-button {
+  width: 130px;
+  height: 50px;
+  position: relative;
+  margin: 0px auto;
+  padding: 10px;
+  text-align: center;
+  border: 3px solid #233142;
+  background: #455d7a;
+  color: white;
+  font-size: 18px;
+  border-radius: 50px;
+  transition: .4s ease;
+}
+
+#filter-button:hover {
+  box-shadow: 0 0 5px #FFFA37;
+  border: 3px solid #233142;
+  background: #233142;
+  color: white;
+}
+
+.options-icon {
+  left: 15px;
+  top: 0px;
+  position: absolute;
+  cursor: pointer;
+  width: 40px;
+}
+#filter-button:hover .circle, #filter-button:hover .filter-line {
+  background-color: #FFF;
+}
+#filter-button.options-icon:hover .line-container:nth-child(1) .circle {
+  -webkit-transform: translateX(-30px);
+          transform: translateX(-30px);
+}
+#filter-button:hover .line-container:nth-child(2) .circle {
+  -webkit-transform: translateX(30px);
+          transform: translateX(30px);
+}
+#filter-button:hover .line-container:nth-child(3) .circle {
+  -webkit-transform: translateX(-5px);
+          transform: translateX(-5px);
+}
+
+.line-container {
+  margin: 10px 0;
+  position: relative;
+}
+
+.filter-line {
+  height: 2px;
+  background-color: #2F4C65;
+  border-radius: 2px;
+  transition: all 0.25s ease-in-out;
+}
+
+.circle {
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  background-color: #2F4C65;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  transition: all 0.25s ease-in-out;
+}
+.line-container:nth-child(1) .circle {
+  right: 5px;
+}
+.line-container:nth-child(2) .circle {
+  left: 5px;
+}
+.line-container:nth-child(3) .circle {
+  left: 50%;
+  margin-left: -4px;
+}

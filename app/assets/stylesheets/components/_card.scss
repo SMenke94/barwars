@@ -1,0 +1,123 @@
+.deal-wrapper {
+  padding-top: 40px;
+  margin-top: 60px;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(250,250,250,1);
+}
+
+.deal-info {
+  position: relative;
+  background-color: red;
+  width: 325px;
+  height: 250px;
+}
+
+.deal-bg-img {
+  border: 8px solid white;
+  box-shadow: 0 0 5px rgba(150,150,150,1);
+  margin: 20px 10px;
+  display: inline-block;
+  border-radius: 4px;
+  height: 250px;
+  width: 325px;
+  background-repeat: no-repeat;
+}
+
+.deal-info .bar-name{
+  background-color: rgba(0,0,0,0.6);
+  text-transform: uppercase;
+  vertical-align: middle;
+  padding: 0px 5px;
+  padding-top: 15px;
+  margin: 0 auto;
+  margin-top: 70px;
+  text-align: center;
+  min-width: 50%;
+  max-width: 80%;
+  color: white;
+  border: 3px solid white;
+}
+
+.stats {
+  text-align: center;
+  position: absolute;
+  left: -12px;
+  bottom: -40px;
+  box-shadow: 0px 1px 5px #233142;
+  background-color: white;
+  height: 80px;
+  width: 335px;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+.stats ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-left: 0;
+  margin-left: 20px;
+  height: 100%;
+}
+
+.heading {
+  text-align: center;
+  color: #455d7a;
+  text-transform: uppercase;
+  font-size: 20px;
+  letter-spacing: 1.5px;
+  margin-bottom: 2px;
+}
+
+.footing {
+  color: rgba(100,100,100,0.8);
+  font-size: 60px;
+  font-weight: 50;
+  text-align: center;
+  font-size: 15px;
+  margin-bottom: 10px;
+  margin-left: -10px;
+}
+
+#button-link {
+  text-decoration: none;
+}
+
+.like-icon {
+  color: rgba(200,200,200,0.4);
+  font-size: 25px;
+  position: absolute;
+  top: 10px;
+  left: 460px;
+  transition: 0.4s ease;
+}
+
+.like-icon:hover {
+  color: rgba(200,200,200,0.9);
+}
+
+#bar-button {
+  position: relative;
+  min-width: 300px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  text-align: center;
+  border: 3px solid #233142;
+  background: #455d7a;
+  color: white;
+  font-size: 22px;
+  border-radius: 50px;
+  font-family: 'Kreon', serif;
+  transition: .4s ease;
+  top: -10px;
+}
+
+#bar-button:hover {
+  text-decoration: none;
+  box-shadow: 0 0 10px #233142;
+  border: 3px solid #FFFA37;
+  background: #FFFA37;
+  color: #455d7a;
+  cursor: pointer;
+}
