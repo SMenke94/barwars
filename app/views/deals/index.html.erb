@@ -34,14 +34,14 @@
     <div class="deal-wrapper">
       <div class="container text-center">
         <div class="row">
-          <% 4.times do %>
+          <% @deals.each do |deal| %>
           <div class="col-xs-3">
-            <div class="deal-info deal-bg-img" style="background-image: url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=fada82e527ef9eeaa1faed34043b425b&auto=format&fit=crop&w=1267&q=80');">
+            <div class="deal-info deal-bg-img" style="background-image: url(<%= deal.bar.photo %>);">
               <div class="type-icon">
-                <i class="fas fa-beer"></i>
+                <i class="<%= deal.type.fa_icon if deal.type.fa_icon %>"></i>
               </div>
               <div class="bar-name">
-               <p>Bar name</p>
+               <p><%= deal.bar.name %></p>
              </div>
              <div class="stats">
               <ul>
@@ -55,13 +55,13 @@
                 </li>
                 <li>
                   <p class="heading"><i class="far fa-clock"></i></p>
-                  <p class="footing">17.00</p>
+                  <p class="footing"><%= deal.start_time.hour.minute %></p>
                 </li>
               </ul>
               <%= link_to "#", class: "deal-bar-button" do %>
                 <div id="bar-button">
-                  <h4 class="deal-heading">Happy Hour&nbsp;<span class="deal-price"> 130DKK</span></h4>
-                  <p class="deal-footing">All drinks on the menu</p>
+                  <h4 class="deal-heading"><%= deal.type.name %>&nbsp;<span class="deal-price"> <%= "#{deal.price} #{'DKK' if deal.price}" %></span></h4>
+                  <p class="deal-footing"><%= deal.description %></p>
                 </div>
               <% end %>
             </div>
@@ -71,23 +71,6 @@
       </div>
     </div> <!-- Closing card container -->
   </div> <!-- Closing wrapper -->
-
-
-  <!-- Filter modal -->
-  <div class="modal fade" id="filterModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content filter">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <%= render 'shared/filters' %>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- Back to top button -->
   <%= link_to "#", id: "return-to-top" do %>
