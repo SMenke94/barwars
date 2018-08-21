@@ -11,18 +11,26 @@ bar2 = Bar.new(name: "Kassen", opening_hour: "10:00", address: "Nørrebrogade 18
 bar2.save!
 puts 'Finished!'
 
-puts 'Creating 4 types'
+puts 'Creating all types'
 type1 = Type.new(name: "Beer")
+type1.fa_icon = "fas fa-beer"
 type1.save!
 
 type2 = Type.new(name: "Happy Hour")
+type2.fa_icon = "fas fa-cocktail"
 type2.save!
 
 type3 = Type.new(name: "Open Bar")
+type3.fa_icon = "fas fa-wine-glass-alt"
 type3.save!
 
-type4 = Type.new(name: "Special Offers")
+type4 = Type.new(name: "Special Offer")
+type4.fa_icon = "fas fa-bolt"
 type4.save!
+
+type5 = Type.new(name: "Shots")
+type5.fa_icon = "fab fa-bitbucket"
+type5.save!
 puts 'Finished!'
 
 
