@@ -38,8 +38,8 @@ ActiveRecord::Schema.define(version: 2018_08_20_111142) do
   create_table "deals", force: :cascade do |t|
     t.integer "price"
     t.string "description"
-    t.time "start_time"
-    t.time "end_time"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.bigint "bar_id"
     t.bigint "type_id"
     t.datetime "created_at", null: false

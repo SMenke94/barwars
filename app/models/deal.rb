@@ -2,7 +2,7 @@ class Deal < ApplicationRecord
   belongs_to :user_deal
   belongs_to :bar
 
-  validates :price, presence: true, numericality: { greater_than: 0 }
+  validates :price, numericality: { greater_than: 0 }
   validates :description, presence: true, allow_blank: false
   validates :start_time, presence: true, allow_blank: false
   validates :end_time, presence: true, allow_blank: false
