@@ -8,4 +8,7 @@ class Bar < ApplicationRecord
   validates :contact_info, presence: true, allow_blank: false
   # validates :smoking, presence: true
   # validates :dancing, presence: true
+
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end
