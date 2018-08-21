@@ -1,8 +1,8 @@
 class Deal < ApplicationRecord
-  belongs_to :user_deal
+  belongs_to :type
+  has_many :user_deals, dependent: :destroy
   belongs_to :bar
 
-  validates :price, numericality: { greater_than: 0 }
   validates :description, presence: true, allow_blank: false
   validates :start_time, presence: true, allow_blank: false
   validates :end_time, presence: true, allow_blank: false

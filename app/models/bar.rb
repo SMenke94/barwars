@@ -1,5 +1,5 @@
 class Bar < ApplicationRecord
-  has_many :deals
+  has_many :deals, dependent: :destroy
 
   validates :opening_hour, presence: true, allow_blank: false
   validates :photo, presence: true
