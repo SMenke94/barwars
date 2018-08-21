@@ -14,4 +14,9 @@ class Deal < ApplicationRecord
     end
   end
 
+  def valid_now?
+    DateTime.now.wday == start_time.wday && DateTime.now <= end_time
+  end
 end
+
+
