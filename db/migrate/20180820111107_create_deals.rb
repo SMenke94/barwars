@@ -3,8 +3,8 @@ class CreateDeals < ActiveRecord::Migration[5.2]
     create_table :deals do |t|
       t.integer :price
       t.string :description
-      t.time :start_time
-      t.time :end_time
+      t.datetime :start_time
+      t.datetime :end_time
 
       t.references :bar, foreign_key: true
 
