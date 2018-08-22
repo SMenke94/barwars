@@ -26,7 +26,8 @@
     <% end %>
 
     <!-- Filters box-->
-    <%= render 'shared/filter-box' %>
+    <%= render 'deals/filter-box' %>
+
 
   </div> <!-- Closing header container -->
 
@@ -69,25 +70,24 @@
         </div>
         <% end %>
       </div>
+
+
+      <!-- INDEX TEST -->
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <div id="deals-list">
+      <%= render partial: "deals/list", locals: { deals: @deals} %>
+    </div>
+
+    <!-- INDEX TEST -->
+
     </div> <!-- Closing card container -->
   </div> <!-- Closing wrapper -->
 
 
-  <!-- Filter modal -->
-  <div class="modal fade" id="filterModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content filter">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <%= render 'shared/filters' %>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- Back to top button -->
   <%= link_to "#", id: "return-to-top" do %>

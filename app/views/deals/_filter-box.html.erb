@@ -1,0 +1,25 @@
+<div id="show-filters" class="text-center slideup">
+
+
+
+
+<div class="form-group">
+  <!-- <label class="control-label check_boxes optional">Types</label> -->
+  <form action="<%= deals_path %>" method="get", class: "filter-form", data-remote="true">
+  <div class="category-choices">
+    <% @types.each do |type| %>
+      <label for="<%= "type_#{type.id}" %>" class="btn category-choice category-filter">
+        <%= type.name %>
+      </label>
+      <input type="checkbox" class="hidden" value="<%= type.name %>" name="type[]" id="<%= "type_#{type.id}"%>">
+    <% end %>
+   </div>
+</div>
+
+    <input type="submit" value="Filter" class="btn filter-button hidden" id="goobypls" />
+
+  </form>
+
+</div>
+
+
