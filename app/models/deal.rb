@@ -17,6 +17,17 @@ class Deal < ApplicationRecord
   def valid_now?
     DateTime.now.wday == start_time.wday && DateTime.now <= end_time
   end
+
+  def minutes_to_start
+    (((start_time - DateTime.now) / 3600) - 2) * 60
+  end
+
+  def minutes_to_end
+    (((end_time - DateTime.now) / 3600) - 2) * 60
+  end
+  def started?
+    start_time > DateTime.now
+  end
 end
 
 
