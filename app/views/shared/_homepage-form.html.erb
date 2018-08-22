@@ -2,7 +2,7 @@
 
   <%= form_tag("/deals", method: "get", class: "search-form") do %>
 
-  <%= text_field_tag(:q, value = nil, placeholder: "Your location", class: "form-control search text-center", id: "bar_address",
+  <%= text_field_tag(:q, value = nil, required: true, oninvalid: "this.setCustomValidity('We need to know where you are!')", placeholder: "Your location", class: "form-control search text-center", id: "bar_address",
   style: "font-size: 14px; width: 300px; margin: 0 auto; margin-bottom: 20px; border-radius: 10px;")
   %>
 
