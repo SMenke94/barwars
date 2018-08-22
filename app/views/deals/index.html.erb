@@ -25,7 +25,8 @@
     <% end %>
 
     <!-- Filters box-->
-    <%= render 'shared/filter-box' %>
+    <%= render 'deals/filter-box' %>
+
 
   </div> <!-- Closing header container -->
 
@@ -70,6 +71,20 @@
         </div>
         <% end %>
       </div>
+
+
+      <!-- INDEX TEST -->
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <div id="deals-list">
+      <%= render partial: "deals/list", locals: { deals: @deals} %>
+    </div>
+
+    <!-- INDEX TEST -->
+
     </div> <!-- Closing card container -->
   </div> <!-- Closing wrapper -->
 

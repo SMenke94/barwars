@@ -1,0 +1,7 @@
+<ul>
+  <% deals.each do |deal| %>
+    <li><h3><%= deal.bar.name %></h3></li>
+    <li><%= deal.type.name %></li>
+    <li><%= deal.description %></li>
+  <% end %>
+</ul>
