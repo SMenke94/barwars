@@ -21,7 +21,7 @@ class DealsController < ApplicationController
     end
 
     if @deals.blank?
-      @deals = Deal.all.select!(&:valid_now?)
+      @deals = Deal.all.select(&:valid_now?)
     end
   end
 
