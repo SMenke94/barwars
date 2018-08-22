@@ -5,8 +5,8 @@
       <div class="type-icon large">
         <i class="<%= @deal.type.fa_icon if @deal.type.fa_icon %>"></i>
       </div>
-      <div class="distance-from-you">
-        2.5 km from you
+      <div class="distance-from-you"> <i class="fas fa-map-marker-alt"></i> &nbsp;
+        <%= Geocoder::Calculations.distance_between([@current_location[0],@current_location[1]], [@deal.bar.latitude,@deal.bar.longitude]).round(1) %> km from you
       </div>
     </div>
     <h2 class="deal-number">Deal #<%= @deal.id %></h2>
