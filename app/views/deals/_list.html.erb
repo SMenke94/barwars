@@ -1,0 +1,38 @@
+<div class="row">
+    <% deals.each do |deal| %>
+    <div class="col-xs-3">
+      <div class="deal-info deal-bg-img" style="background-image: url(<%= deal.bar.photo %>);">
+        <div class="type-icon">
+           <i class="<%= deal.type.fa_icon if deal.type.fa_icon %>"></i>
+        </div>
+        <div class="bar-name">
+         <p><%= deal.bar.name %></p>
+       </div>
+       <div class="stats">
+        <ul>
+          <li>
+            <p class="heading"><i class="fas fa-star-half-alt"></i></p>
+            <p class="footing">3.6</p>
+          </li>
+          <li class="middlechild">
+            <p class="heading"><i class="fas fa-map-marked-alt"></i></p>
+            <p class="footing">
+            <%= Geocoder::Calculations.distance_between([current_location[0],current_location[1]], [deal.bar.latitude,deal.bar.longitude]).round(1) %> KM
+            </p>
+          </li>
+          <li>
+            <p class="heading"><i class="far fa-clock"></i></p>
+            <p class="footing"><%= deal.start_time.hour.minute %></p>
+          </li>
+        </ul>
+        <%= link_to deal_path(deal), class: "deal-bar-button" do %>
+          <div id="bar-button">
+            <h4 class="deal-heading"><%= deal.type.name %>&nbsp;<span class="deal-price"> <%= "#{deal.price} #{'DKK' if deal.price}" %></span></h4>
+            <p class="deal-footing"><%= deal.description %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
