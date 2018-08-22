@@ -24,6 +24,7 @@
         <%= cl_image_tag current_user.photo, :class => "avatar dropdown-toggle", :id => "navbar-wagon-menu", "data-toggle" => "dropdown" %>
         <% else %>
         <%= image_tag "blank-avatar.jpg", :class => "avatar dropdown-toggle", :id => "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <% end %>
         <ul class="dropdown-menu dropdown-menu-right navbar-barwars-dropdown-menu">
           <li>
             <%= link_to 'My profile', dashboard_path %>
