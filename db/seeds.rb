@@ -50,7 +50,7 @@ deal3.bar = bar2
 deal3.type  = type3
 deal3.save!
 
-deal4 = Deal.new(description: "It's your birthday! Get a free bottle", start_time: DateTime.new(2018,8,22,21,30), end_time: DateTime.new(2018,8,22,23,30), price: 100)
+deal4 = Deal.new(description: "It's your birthday! Get a free bottle", start_time: DateTime.new(2018,8,23,21,30), end_time: DateTime.new(2018,8,23,23,30), price: 100)
 deal4.bar = bar2
 deal4.type = type4
 deal4.save!
