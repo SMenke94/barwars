@@ -12,7 +12,7 @@ class DealsController < ApplicationController
     end
 
 
-    # @deals = Bar.near(params[:q], params[:distance]).map(&:deals).flatten.select!(&:valid_now?)
+    @deals = Bar.near(params[:q], params[:distance]).map(&:deals).flatten.select!(&:valid_now?)
     if params[:q]
       @current_location = Geocoder.search(params[:q]).first.coordinates
       cookies[:current_location] = @current_location.to_json
