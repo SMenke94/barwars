@@ -1,23 +1,25 @@
 class DealsController < ApplicationController
   def index
-    @deals = Deal.all
+
+    @types = Type.all
     if params[:type]
       @deals = Deal.joins(:type).where(types: {name: params[:type]})
       respond_to do |format|
         format.html
         format.js  # <-- idem
       end
-        # Deal.joins(:type).where('types.name = ?', params[:type][0])
-        # @deals = @deals.where(type: [params[:type]])
-      # elsif params[:q].present?
-      #   sql_query = "name ILIKE :q OR description ILIKE :q OR category ILIKE :q"
-      #   @gears = @gears.where(sql_query, q: "%#{params[:q]}%")
-      end
 
-    @types = Type.all
 
+    @deals = Bar.near(params[:q], params[:distance]).map(&:deals).flatten.select!(&:valid_now?)
+    if params[:q]
+      @current_location = Geocoder.search(params[:q]).first.coordinates
+    end
+      
+    if @deals.nil?
+      @deals = Deal.all
+    end
   end
-
+    
   def show
     @deal = Deal.find(params[:id])
   end

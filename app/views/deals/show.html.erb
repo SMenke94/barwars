@@ -1,1 +1,36 @@
-<h1>This is a deal showpage</h1>
+<div class="showpage-wrapper">
+  <div class="deal-information">
+    <div class="picture-banner" style="background-image: url(<%= @deal.bar.photo %>)">
+      <div class="deal-bar-name"><%= @deal.bar.name %></div>
+      <div class="type-icon large">
+        <i class="<%= @deal.type.fa_icon if @deal.type.fa_icon %>"></i>
+      </div>
+      <div class="distance-from-you">
+        2.5 km from you
+      </div>
+    </div>
+    <h2 class="deal-number">Deal #<%= @deal.id %></h2>
+    <div class="deal-info-footing">
+      <div id="deal-informations">
+        <h4 class="deal-heading text-center">
+          <%= @deal.type.name %><br><span class="deal-price"> <%= "#{@deal.price} #{'DKK' if @deal.price}" %></span>
+        </h4>
+        <p class="deal-footing"><%= @deal.description %></p>
+      </div>
+      <div class="countdown-box">
+        <%= render 'shared/clock' %>
+        <%= render 'shared/countdown' %>
+      </div>
+      <div class="bar-info-box">
+        <h5 class="contact-info text-center">Contact information</h5>
+        <ul class="info-list">
+          <li><i class="fas fa-map-marker-alt"></i>&nbsp; <%= @deal.bar.address %></li>
+          <li><i class="fas fa-phone"></i>&nbsp;Phonenumber</li>
+          <li><i class="fas fa-at"></i>&nbsp;Email address</li>
+          <li><i class="fab fa-internet-explorer">&nbsp;</i>Website</li>
+        </ul>
+      </div>
+      <div class="verticalLine"></div>
+    </div>
+  </div>
+</div>

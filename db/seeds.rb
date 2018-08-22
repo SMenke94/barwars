@@ -11,38 +11,46 @@ bar2 = Bar.new(name: "Kassen", opening_hour: "10:00", address: "Nørrebrogade 18
 bar2.save!
 puts 'Finished!'
 
-puts 'Creating 4 types'
+puts 'Creating all types'
 type1 = Type.new(name: "Beer")
+type1.fa_icon = "fas fa-beer"
 type1.save!
 
 type2 = Type.new(name: "Happy Hour")
+type2.fa_icon = "fas fa-cocktail"
 type2.save!
 
 type3 = Type.new(name: "Open Bar")
+type3.fa_icon = "fas fa-wine-glass-alt"
 type3.save!
 
-type4 = Type.new(name: "Special Offers")
+type4 = Type.new(name: "Special Offer")
+type4.fa_icon = "fas fa-bolt"
 type4.save!
+
+type5 = Type.new(name: "Shots")
+type5.fa_icon = "fab fa-bitbucket"
+type5.save!
 puts 'Finished!'
 
 
 puts 'Creating 4 deals'
-deal1 = Deal.new(description: "Double up on alcohol", start_time: "Thursday, 19:00", end_time: "Thursday, 21:00")
+deal1 = Deal.new(description: "Double up on alcohol", start_time: DateTime.new(2018,8,22,10,30), end_time: DateTime.new(2018,8,22,20,30))
 deal1.bar = bar1
 deal1.type = type1
 deal1.save!
 
-deal2 = Deal.new(description: "Two for one", start_time: "Friday, 12:00", end_time: "Friday, 18:00", price: 10)
+deal2 = Deal.new(description: "Two for one", start_time: DateTime.new(2018,8,22,18,30), end_time: DateTime.new(2018,8,22,20,30), price: 10)
 deal2.bar = bar1
 deal2.type = type2
 deal2.save!
 
-deal3 = Deal.new(description: "All drinks on the menu", start_time: "Wednesday, 20:00" , end_time: "Wednesday, 23:00", price: 200)
+deal3 = Deal.new(description: "All drinks on the menu", start_time: DateTime.new(2018,8,22,12,30), end_time: DateTime.new(2018,8,22,20,30), price: 200)
 deal3.bar = bar2
 deal3.type  = type3
 deal3.save!
 
-deal4 = Deal.new(description: "It's your birthday! Get a free bottle", start_time: "Thursday, 20:00" , end_time: "Thursday, 22:00", price: 100)
+deal4 = Deal.new(description: "It's your birthday! Get a free bottle", start_time: DateTime.new(2018,8,23,21,30), end_time: DateTime.new(2018,8,23,23,30), price: 100)
 deal4.bar = bar2
 deal4.type = type4
 deal4.save!
