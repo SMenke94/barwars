@@ -17,7 +17,10 @@ class ApplicationController < ActionController::Base
   end
 
   def current_location
-    @current_location = JSON.parse(cookies[:current_location]) || [55.6760968, 12.5683372]
+    if cookies[:current_location]
+      @current_location = JSON.parse(cookies[:current_location])
+    else
+      @current_location = [55.6760968, 12.5683372]
+    end
   end
-
 end
