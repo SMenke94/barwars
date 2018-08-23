@@ -84,22 +84,21 @@
 }
 
 #show-filters {
-  box-shadow: 0 0 10px rgba(35, 49, 66, 1);
-  border-radius: 50px;
-  height: 250px;
+  border-radius: 5px;
+  height: 140px;
   width: 65%;
   margin: 0 auto;
   color: white;
-  background: rgba(35, 49, 66, 0.9);
+  background: rgba(35, 49, 66, 1);
 }
 
 .slideup, .slidedown {
   max-height: 0;
   overflow-y: hidden;
-  -webkit-transition: max-height 0.3s ease-in-out;
-  -moz-transition: max-height 0.3s ease-in-out;
-  -o-transition: max-height 0.3s ease-in-out;
-  transition: max-height 0.3s ease-in-out;
+  -webkit-transition: max-height 0.4s ease-in-out;
+  -moz-transition: max-height 0.4s ease-in-out;
+  -o-transition: max-height 0.4s ease-in-out;
+  transition: max-height 0.4s ease-in-out;
 }
 
 .slidedown {

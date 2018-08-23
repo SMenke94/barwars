@@ -20,28 +20,58 @@
   }
 }
 
+.btn {
+  border-radius: 0px;
+}
+
 // Checkboxes design
 .category-choices {
+  transition: 0s;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   margin: 20px 0;
 }
 
 .category-choice {
-  background: #b7b7b7;
-  padding: 20px;
-  border-radius: 5px;
-  opacity: .4;
-  flex: 0 0 30%;
+  transition: 0s;
+  text-transform: uppercase;
+  border: 2px solid white;
+  opacity: 0.8;
+  cursor: pointer;
+  color: white;
+  background: #233142;
+  padding: 5px 5px;
+  opacity: 1;
+  width: 135px;
   text-align: center;
   &:hover {
-    opacity: 1;
-    cursor: pointer;
+    border: 2px solid rgba(255,255,255,1);
+    background: rgba(255,255,255,1);
   }
   &.active {
-  background: $brand-primary;
-  color: white;
-  opacity: 1;
+    text-shadow: -0.1px 0 #233142, 0 0.1px #233142, 0.1px 0 #233142, 0 -0.1px #233142;
+    border: 2px solid #ffe030;
+    background: #ffe030;
+    color: #233142;
+    opacity: 1;
   }
+  &:first-child {
+    border-bottom-left-radius: 25px;
+    border-top-left-radius: 25px;
+  }
+  h5 {
+    margin: 0px;
+    font-size: 16px;
+  }
+}
+
+.category-choice:hover h5 {
+    color: #233142;
+    text-shadow: -0.5px 0 #ffe030, 0 0.5px #ffe030, 0.5px 0 #ffe030, 0 -0.5px #ffe030;
+  }
+
+.Shots {
+  border-bottom-right-radius: 25px;
+  border-top-right-radius: 25px;
 }

@@ -17,7 +17,7 @@ type1.fa_icon = "fas fa-beer"
 type1.save!
 
 type2 = Type.new(name: "Happy Hour")
-type2.fa_icon = "fas fa-cocktail"
+type2.fa_icon = "fas fa-glass-martini"
 type2.save!
 
 type3 = Type.new(name: "Open Bar")
