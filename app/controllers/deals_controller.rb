@@ -1,10 +1,8 @@
 class DealsController < ApplicationController
-  # after_action :deal_valid_now, only: [:index]
-
   def index
     @types = Type.all
     if params[:type]
-      @deals = Deal.joins(:type).where(types: {name: params[:type]}).select!(&:valid_now?)
+      @deals = Deal.joins(:type).where(types: {name: params[:type]}).select(&:valid_now?)
       respond_to do |format|
         format.html
         format.js  # <-- idem
@@ -28,10 +26,4 @@ class DealsController < ApplicationController
   def show
     @deal = Deal.find(params[:id])
   end
-
-  private
-
-  # def deal_valid_now
-  #   @deals.select!(&:valid_now?)
-  # end
 end
