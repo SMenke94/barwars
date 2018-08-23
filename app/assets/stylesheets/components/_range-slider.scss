@@ -3,13 +3,12 @@
 }
 
 .range-slider {
-  border-radius: 50px;
+  border-radius: 10px;
   vertical-align: middle;
   height: 10px;
   padding: 20px 20px;
   padding-bottom: 30px;
-  border: 2px solid white;
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(255,255,255,0.2);
   display: block;
   margin: 0 auto;
   width: 40%;
@@ -65,20 +64,31 @@
 }
 
 .range-slider__value {
-  border: 3px solid white;
+  background-color: rgba(255,255,255,0.2);
   text-align: center;
-  padding-top: 16px;
+  padding-top: 8px;
   font-size: 25px;
-  margin-top: 15px;
+  margin-top: 20px;
   display: inline-block;
   position: relative;
   color: #fff;
   line-height: 20px;
   text-align: center;
-  border-radius: 50%;
-  background: rgba(0,0,0,0.9);
-  height: 60px;
-  width: 60px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  height: 40px;
+  width: 100px;
+}
+
+.distance-home {
+  font-size: 14px;
+  margin-top: 9px;
+  margin-left: 5px;
+  word-spacing: 35px;
+  color: rgba(240,240,240,1);
+  i {
+    font-size: 18px;
+  }
 }
 
 ::-moz-range-track {
@@ -89,4 +99,22 @@
 input::-moz-focus-inner,
 input::-moz-focus-outer {
   border: 0;
+}
+
+#search-submit {
+  box-shadow: 0 0 10px #ffe030;
+  background-color: rgba(255,255,255,0.1);
+  color: white;
+  border: 3px solid white;
+  padding: 5px 10px;
+  padding-top: 1px;
+  margin-top: 20px;
+  font-size: 28px;
+  border-radius: 25px;
+  width: 250px;
+  &:hover {
+    background-color: #ffe030;
+    color: #233142;
+    border: 3px solid #ffe030;
+  }
 }

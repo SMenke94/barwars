@@ -18,7 +18,7 @@ class DealsController < ApplicationController
       cookies[:current_location] = @current_location.to_json
     end
 
-    if @deals.blank?
+    if @deals.nil?
       @deals = Deal.all.select(&:valid_now?)
     end
   end
