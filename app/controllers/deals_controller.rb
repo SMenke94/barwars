@@ -30,7 +30,8 @@ class DealsController < ApplicationController
 
     @markers = [{
       lat: @deal.bar.latitude,
-      lng: @deal.bar.longitude
+      lng: @deal.bar.longitude,
+      infoWindow: { content: render_to_string(partial: "/shared/map-box", locals: { deal: @deal }) }
     }]
   end
 end

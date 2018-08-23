@@ -1,0 +1,39 @@
+.map-box {
+  width: 120px;
+  height: 50px;
+  i {
+    color: rgba(100,100,100,1);
+    text-shadow: none;
+    margin: none;
+    margin-left: -10px;
+    padding: none;
+  }
+}
+
+.distance-to-you {
+  color: rgba(100,100,100,1);
+  font-size:10px;
+  position: absolute;
+  left: 40px;
+  top: 40px;
+}
+
+a.take-me-there {
+  text-decoration: none;
+}
+
+.take-me-there {
+  position: absolute;
+  top: 5px;
+  left: 25px;
+  border-radius: 5px;
+  border: 2px solid #233142;
+  color: #233142;
+  font-size: 14px;
+  padding: 5px;
+  &:hover {
+    text-decoration: none;
+    color: white;
+    background-color: #233142;
+  }
+}

@@ -12,12 +12,12 @@
           <ul class="dropdown-menu dropdown-menu-left profile-page navbar-barwars-dropdown-menu">
             <li>
               <%= link_to "#" do %>
-                <i class="fas fa-user-edit"></i> &nbsp;&nbsp;Edit profile</i>
+              <i class="fas fa-user-edit"></i> &nbsp;&nbsp;Edit profile</i>
               <% end %>
             </li>
             <li>
               <%= link_to "#" do %>
-                <i class="far fa-trash-alt"></i> &nbsp; &nbsp; Delete profile</i>
+              <i class="far fa-trash-alt"></i> &nbsp; &nbsp; Delete profile</i>
               <% end %>
             </li>
           </ul>
@@ -41,26 +41,35 @@
           Email address
         </div>
         <div class="profile-email input">
-          email@gmail.com
+          <%= current_user.email %>
         </div>
       </div>
       <!-- Edit form with update button -->
     </div>
     <div class="my-deals-wrapper">
-      <h1 class="my-deals">My deals</h1>
+      <h1 class="my-deals">My saved deals</h1>
       <div class="scrollable-div pre-scrollable">
-        <h1>Try and scroll!</h1>
-        <h1>You can scroll!</h1>
-        <h1>You can scroll!</h1>
-        <h1>You can scroll!</h1>
-        <h1>You can scroll!</h1>
-        <h1>You can scroll!</h1>
-        <h1>You can scroll!</h1>
-        <h1>You can scroll!</h1>
-        <h1>You can scroll!</h1>
-        <h1>Cool huh!</h1>
-        <div class="arrow bounce"><i class="fas fa-angle-down"></i></div>
+        <div class="row">
+          <% 5.times do %>
+          <div class="col-xs-6">
+            <div class="saved-deal">
+              <div class="saved-deal-time">Thursday from 17:00 to 19:00</div>
+              <%= link_to "#", class: "deal-bar-button dashboard" do %>
+              <div id="bar-button">
+                <h4 class="deal-heading">BEER <span class="deal-price">200 DKK</span></h4>
+                <p class="deal-footing">All bottle beers</p>
+              </div>
+              <% end %>
+              <ul class="list-inline text-center">
+                <li><div class="saved-bar-name"><strong>Bar name</strong></div></li>
+                <li><div class="saved-bar-address">Nørrebrogade 18 <i class="fas fa-map-marker-alt"></i></div></li>
+              </ul>
+            </div>
+          </div>
+          <% end %>
+        </div>
       </div>
+      <div class="arrow bounce"><i class="fas fa-angle-down"></i></div>
     </div>
   </div>
 
