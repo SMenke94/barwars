@@ -1,16 +1,16 @@
-<% if @deal.started? %>
-  <input type="hidden" id="set-time" value="<%= @deal.minutes_to_start %>
-  "/>
-  <div id="countdown">
-    <div id='tiles' class="color-full"></div>
-    <div class="countdown-label">Deal <strong>starts</strong> in</div>
-  </div>
 
-<% else %>
+<% if @deal.started? %>
   <input type="hidden" id="set-time" value="<%= @deal.minutes_to_end %>"/>
 
   <div id="countdown">
     <div id='tiles' class="color-full"></div>
     <div class="countdown-label">Deal <strong>ends</strong> in</div>
+  </div>
+<% else %>
+  <input type="hidden" id="set-time" value="<%= @deal.minutes_to_start %>
+  "/>
+  <div id="countdown">
+    <div id='tiles' class="color-full"></div>
+    <div class="countdown-label">Deal <strong>starts</strong> in</div>
   </div>
 <% end %>

@@ -35,22 +35,23 @@ puts 'Finished!'
 
 
 puts 'Creating 4 deals'
-deal1 = Deal.new(description: "Double up on alcohol", start_time: DateTime.new(2018,8,22,10,30), end_time: DateTime.new(2018,8,22,21,30))
+Time.zone = 'Europe/Copenhagen'
+deal1 = Deal.new(description: "Double up on alcohol", start_time: Time.zone.local(2018,8,23,10,30), end_time: Time.zone.local(2018,8,23,21,30))
 deal1.bar = bar1
 deal1.type = type1
 deal1.save!
 
-deal2 = Deal.new(description: "Two for one", start_time: DateTime.new(2018,8,22,12,30), end_time: DateTime.new(2018,8,22,20,30), price: 10)
+deal2 = Deal.new(description: "Two for one", start_time: Time.zone.local(2018,8,23,12,30), end_time: Time.zone.local(2018,8,23,20,30), price: 10)
 deal2.bar = bar1
 deal2.type = type2
 deal2.save!
 
-deal3 = Deal.new(description: "All drinks on the menu", start_time: DateTime.new(2018,8,22,12,30), end_time: DateTime.new(2018,8,22,20,30), price: 200)
+deal3 = Deal.new(description: "All drinks on the menu", start_time: Time.zone.local(2018,8,23,12,30), end_time: Time.zone.local(2018,8,23,20,30), price: 200)
 deal3.bar = bar2
 deal3.type  = type3
 deal3.save!
 
-deal4 = Deal.new(description: "It's your birthday! Get a free bottle", start_time: DateTime.new(2018,8,23,21,30), end_time: DateTime.new(2018,8,23,23,30), price: 100)
+deal4 = Deal.new(description: "It's your birthday! Get a free bottle", start_time: Time.zone.local(2018,8,23,21,30), end_time: Time.zone.local(2018,8,23,23,30), price: 100)
 deal4.bar = bar2
 deal4.type = type4
 deal4.save!
