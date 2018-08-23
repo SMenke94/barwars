@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_22_142639) do
+ActiveRecord::Schema.define(version: 2018_08_23_175111) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,12 +40,12 @@ ActiveRecord::Schema.define(version: 2018_08_22_142639) do
   create_table "deals", force: :cascade do |t|
     t.integer "price"
     t.string "description"
-    t.datetime "start_time"
-    t.datetime "end_time"
     t.bigint "bar_id"
     t.bigint "type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.index ["bar_id"], name: "index_deals_on_bar_id"
     t.index ["type_id"], name: "index_deals_on_type_id"
   end
