@@ -18,3 +18,7 @@ var rangeSlider = function(){
 
 rangeSlider();
 
+$('#show-map').on('click', function(){
+  $('#map').toggleClass("is-visible");
+});
+

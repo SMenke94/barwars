@@ -24,6 +24,13 @@ class DealsController < ApplicationController
   end
 
   def show
+
     @deal = Deal.find(params[:id])
+    @bar = Bar.where.not(latitude: nil, longitude: nil)
+
+    @markers = [{
+      lat: @deal.bar.latitude,
+      lng: @deal.bar.longitude
+    }]
   end
 end
