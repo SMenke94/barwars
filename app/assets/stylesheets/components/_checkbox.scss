@@ -1,0 +1,280 @@
+$body-bg:                                 white !default;
+$body-color:                              #292929 !default;
+$gray-200:                                #CCCCCC !default;
+$gray-300:                                #B2B2B2 !default;
+$gray-400:                                #9A9A9A !default;
+$primary:                                 #E50D52 !default;
+$text-muted:                              $gray-400 !default;
+$font-size-base:                          1rem !default;
+$font-weight-normal:                      400;
+$font-weight-bold:                        700;
+$line-height-base:                        1.5 !default;
+
+//my variables
+$form-check-icon-size:                    30px;
+$form-check-input-gutter:                 1rem;
+$form-group-margin-bottom:                1.5rem;
+$form-check-line-height:                  $line-height-base;
+$form-check-label-color:                  rgba($body-color, 0.8);
+$form-check-label-hover-color:            rgba($body-color, 1);
+$form-check-label-disabled-color:         $text-muted;
+$form-check-icon-bg:                      $body-bg;
+$form-check-icon-border-color:            white;
+$form-check-icon-checked-border-color:    rgba(#ffe030, 1);
+$form-check-icon-checked-color:           #233142;
+$form-check-shadow-focus:                 0 6px 7px -1px rgba(white, 0.1);
+
+
+// mixins
+
+@mixin transition($transition...) {
+  transition: $transition;
+}
+
+@mixin animate-keyframe($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+// bounceInCheck animation keyframe
+
+@include animate-keyframe( bounceInCheck ) {
+    0% {
+      -webkit-transform: scale(0.5);
+    }
+
+    50% {
+      -webkit-transform: scale(1.05);
+    }
+
+    70% {
+      -webkit-transform: scale(0.9);
+    }
+
+    100% {
+      -webkit-transform: scale(1);
+    }
+}
+
+// inputs style
+
+input[type="checkbox"]#check01,
+.form-check-input {
+  position: absolute;
+  opacity: 0;
+  width: auto;
+}
+
+input[type="checkbox"]#check01 + label,
+.form-check-label {
+  position: relative;
+  display: block;
+  font-size: $font-size-base;
+  line-height: $form-check-line-height;
+  min-height: $font-size-base * $form-check-line-height;
+  font-weight: $font-weight-normal;
+  padding-left: calc(#{$form-check-icon-size} + #{$form-check-input-gutter});
+  margin-right: 1rem;
+  color: rgba(255,255,255,0.8);
+  @include transition(color .2s ease-out, font-weight .2s ease-out);
+
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+  }
+
+  &:before {
+    top: calc((#{$form-check-line-height}*#{$font-size-base} - #{$form-check-icon-size})/2);
+    left: 0;
+    width: $form-check-icon-size;
+    height: $form-check-icon-size;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    transform: scale(0.5, 0.5);
+    border-width: $form-check-icon-size/2;
+    border-style: solid;
+    background-color: $form-check-icon-bg;
+    border-color: $form-check-icon-border-color;
+    @include transition(transform .2s ease-out, border-width .08s ease-out, border-color .2s ease-out, box-shadow .3s ease-in);
+  }
+
+  &:after {
+    opacity: 0;
+  }
+
+  &:empty {
+    padding-left: $form-check-icon-size;
+  }
+}
+
+// only checkbox
+
+input[type="checkbox"]#check01 + label {
+  &:before {
+    border-radius: 4px;
+  }
+  &:after {
+    top: calc((#{$form-check-line-height}*#{$font-size-base} - #{$form-check-icon-size})/2);
+    left: 0;
+    width: $form-check-icon-size;
+    height: $form-check-icon-size;
+    background-repeat: no-repeat;
+    background-position-x: 0;
+    background-position-y: 0;
+  }
+}
+
+// hover
+
+input[type="checkbox"]#check01:not([disabled]) + label,
+.form-check-input:not([disabled]) ~ .form-check-label {
+  &:hover {
+    color: white;
+    &:before {
+    transform: scale(1, 1);
+    border-width: 3px;
+  }
+  }
+}
+
+// checked
+
+input[type="checkbox"]#check01:checked + label {
+    color: white;
+  &:before {
+    transform: scale(1, 1);
+    border-width: 3px;
+    border-color: $form-check-icon-checked-border-color;
+    animation: bounceInCheck .5s forwards;
+  }
+
+  &:after {
+    opacity: 1;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='#{$form-check-icon-size}' height='#{$form-check-icon-size}' viewBox='0 0 32 32'><path fill='#{$form-check-icon-checked-color}' fill-rule='evenodd' d='M21.826054,10.4197054 C22.4543095,9.83188211 23.4407558,9.86559854 24.0267195,10.4951978 C24.6114555,11.123478 24.5787456,12.1086228 23.9505411,12.6932873 L13.9518819,22.0253662 C13.6603617,22.2986663 13.2811707,22.444446 12.8892629,22.444446 C12.4816327,22.444446 12.0871877,22.2848677 11.7919503,21.9926428 L8.45535151,18.6560606 C7.84821616,18.0489253 7.84821616,17.063441 8.45535151,16.4563056 C9.06248686,15.8491703 10.0479711,15.8491703 10.6549609,16.4561601 L12.9263996,18.7265467 L21.826054,10.4197054 Z'/></svg>");
+    animation: bounceInCheck .2s forwards;
+  }
+
+  &:before,
+  &:after {
+    box-shadow: $form-check-shadow-focus;
+  }
+}
+
+ul.check-choices {
+  color: white;
+  margin: 0 auto;
+  width: 400px;
+}
+
+input[type="checkbox"]#check02,
+.form-check-input {
+  position: absolute;
+  opacity: 0;
+  width: auto;
+}
+
+input[type="checkbox"]#check02 + label,
+.form-check-label {
+  position: relative;
+  display: block;
+  font-size: $font-size-base;
+  line-height: $form-check-line-height;
+  min-height: $font-size-base * $form-check-line-height;
+  font-weight: $font-weight-normal;
+  padding-left: calc(#{$form-check-icon-size} + #{$form-check-input-gutter});
+  margin-right: 1rem;
+  color: rgba(255,255,255,0.8);
+  @include transition(color .2s ease-out, font-weight .2s ease-out);
+
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+  }
+
+  &:before {
+    top: calc((#{$form-check-line-height}*#{$font-size-base} - #{$form-check-icon-size})/2);
+    left: 0;
+    width: $form-check-icon-size;
+    height: $form-check-icon-size;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    transform: scale(0.5, 0.5);
+    border-width: $form-check-icon-size/2;
+    border-style: solid;
+    background-color: $form-check-icon-bg;
+    border-color: $form-check-icon-border-color;
+    @include transition(transform .2s ease-out, border-width .08s ease-out, border-color .2s ease-out, box-shadow .3s ease-in);
+  }
+
+  &:after {
+    opacity: 0;
+  }
+
+  &:empty {
+    padding-left: $form-check-icon-size;
+  }
+}
+
+// only checkbox
+
+input[type="checkbox"]#check02 + label {
+  &:before {
+    border-radius: 4px;
+  }
+  &:after {
+    top: calc((#{$form-check-line-height}*#{$font-size-base} - #{$form-check-icon-size})/2);
+    left: 0;
+    width: $form-check-icon-size;
+    height: $form-check-icon-size;
+    background-repeat: no-repeat;
+    background-position-x: 0;
+    background-position-y: 0;
+  }
+}
+
+// hover
+
+input[type="checkbox"]#check02:not([disabled]) + label,
+.form-check-input:not([disabled]) ~ .form-check-label {
+  &:hover {
+    color: white;
+    &:before {
+    transform: scale(1, 1);
+    border-width: 3px;
+  }
+  }
+}
+
+// checked
+
+input[type="checkbox"]#check02:checked + label {
+    color: white;
+  &:before {
+    transform: scale(1, 1);
+    border-width: 3px;
+    border-color: $form-check-icon-checked-border-color;
+    animation: bounceInCheck .5s forwards;
+  }
+
+  &:after {
+    opacity: 1;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='#{$form-check-icon-size}' height='#{$form-check-icon-size}' viewBox='0 0 32 32'><path fill='#{$form-check-icon-checked-color}' fill-rule='evenodd' d='M21.826054,10.4197054 C22.4543095,9.83188211 23.4407558,9.86559854 24.0267195,10.4951978 C24.6114555,11.123478 24.5787456,12.1086228 23.9505411,12.6932873 L13.9518819,22.0253662 C13.6603617,22.2986663 13.2811707,22.444446 12.8892629,22.444446 C12.4816327,22.444446 12.0871877,22.2848677 11.7919503,21.9926428 L8.45535151,18.6560606 C7.84821616,18.0489253 7.84821616,17.063441 8.45535151,16.4563056 C9.06248686,15.8491703 10.0479711,15.8491703 10.6549609,16.4561601 L12.9263996,18.7265467 L21.826054,10.4197054 Z'/></svg>");
+    animation: bounceInCheck .2s forwards;
+  }
+
+  &:before,
+  &:after {
+    box-shadow: $form-check-shadow-focus;
+  }
+}

@@ -1,22 +1,40 @@
 <div id="show-filters" class="text-center slideup">
 
-<div class="form-group">
-  <!-- <label class="control-label check_boxes optional">Types</label> -->
-  <form action="<%= deals_path %>" method="get", class: "filter-form", data-remote="true">
-  <div class="category-choices">
-    <% @types.each do |type| %>
-      <label for="<%= "type_#{type.id}" %>" class="btn category-choice category-filter">
-        <%= type.name %>
-      </label>
-      <input type="checkbox" class="hidden" value="<%= type.name %>" name="type[]" id="<%= "type_#{type.id}"%>">
-    <% end %>
-   </div>
-</div>
+  <div class="form-group">
+    <!-- <label class="control-label check_boxes optional">Types</label> -->
+    <form action="<%= deals_path %>" method="get", class: "filter-form", data-remote="true">
+      <div class="category-choices">
+        <% @types.each do |type| %>
+        <label for="<%= "type_#{type.id}" %>" class="<%= type.name %> type btn category-choice category-filter">
+        <h5><%= type.name %></h5><i class="<%= type.fa_icon if type.fa_icon %>"></i>
+        </label>
+        <input type="checkbox" class="hidden" value="<%= type.name %>" name="type[]" id="<%= "type_#{type.id}"%>">
+        <% end %>
+      </div>
+    </div>
 
     <input type="submit" value="Filter" class="btn filter-button hidden" id="goobypls" />
 
   </form>
-
+  <ul class="list-inline">
+    <li>
+      <div class="check-choices">
+        <input type="checkbox" value="" id="check01">
+        <label for="check01">
+          I wanna dance!
+        </label>
+      </li>
+      <li>
+        <input type="checkbox" value="" id="check02">
+        <label for="check02">
+          No smoking, please
+        </label>
+      </div>
+    </li>
+  </ul>
 </div>
+
+
+
 
 
