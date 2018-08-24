@@ -6,16 +6,10 @@ $(document).ready(function(){
   });
 });
 
-// $('#secondarybtn').click(function(){
-//   console.log("clicked")
-//     $("#primarybtn").click();
-// })
-
-
-
-
 const filterbutton = document.getElementById("filter-button");
+
   filterbutton.addEventListener("click", (event) => {
+
     const types = document.querySelectorAll(".category-filter");
     types.forEach(function(type) {
       type.addEventListener("click", (event) => {
@@ -24,7 +18,27 @@ const filterbutton = document.getElementById("filter-button");
         }, delayInMilliseconds);
       });
     });
+
+    const dancing = document.querySelectorAll("#dancing");
+    dancing.forEach(function(dance) {
+      dance.addEventListener("click", (event) => {
+        setTimeout(function() {
+          $("#goobypls").click();
+        }, delayInMilliseconds);
+      });
+    });
+
+    const smoking = document.querySelectorAll("#smoking");
+    smoking.forEach(function(smoke) {
+      smoke.addEventListener("click", (event) => {
+        setTimeout(function() {
+          $("#goobypls").click();
+        }, delayInMilliseconds);
+      });
+    });
+
 });
+
 
 
 

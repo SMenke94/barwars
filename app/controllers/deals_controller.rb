@@ -1,12 +1,19 @@
 class DealsController < ApplicationController
   def index
     @types = Type.all
+    dancing_deals
+    smoking_deals
+
     if params[:type]
       @deals = Deal.joins(:type).where(types: {name: params[:type]}).select(&:valid_now?)
       respond_to do |format|
         format.html
         format.js  # <-- idem
       end
+    elsif params[:dancing]
+      @deals = @dancing
+    elsif params[:smoking]
+      @deals = @nosmoking
     else
       @deals = Deal.all.select(&:valid_now?)
     end
@@ -33,4 +40,28 @@ class DealsController < ApplicationController
       infoWindow: { content: render_to_string(partial: "/shared/map-box", locals: { deal: @deal }) }
     }]
   end
+
+  private
+
+  def dancing_deals
+    @dancing = []
+    @dancingdeals = Deal.all
+    @dancingdeals.each do |deal|
+      if deal.bar.dancing
+        @dancing << deal
+      end
+    end
+  end
+
+  def smoking_deals
+    @nosmoking = []
+    @nosmokingdeals = Deal.all
+    @nosmokingdeals.each do |deal|
+      if deal.bar.smoking = false
+        @nosmoking << deal
+      end
+    end
+  end
+
+
 end
