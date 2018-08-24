@@ -11,9 +11,9 @@ class DealsController < ApplicationController
         format.js  # <-- idem
       end
     elsif params[:dancing]
-      @deals = @dancing
+      @deals = @dancing.select(&:valid_now?)
     elsif params[:smoking]
-      @deals = @nosmoking
+      @deals = @nosmoking.select(&:valid_now?)
     else
       @deals = Deal.all.select(&:valid_now?)
     end
