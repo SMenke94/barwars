@@ -10,13 +10,36 @@
         </label>
         <input type="checkbox" class="hidden" value="<%= type.name %>" name="type[]" id="<%= "type_#{type.id}"%>">
         <% end %>
-      </div>
-    </div>
+
 
     <input type="submit" value="Filter" class="btn filter-button hidden" id="goobypls" />
 
+    <div class="form-group">
+    <!-- <label class="control-label check_boxes optional">Types</label> -->
+
+      <!-- dancing -->
+        <label for="dancing" class="dancing-filter">
+        <h5>I Wanna Dance!</h5>
+        </label>
+        <input type="checkbox" class="" value="dancing" name="dancing[]" id="dancing">
+
+      <!-- smoking -->
+        <label for="smoking" class="smoking-filter">
+        <h5>No Smoking Please</h5>
+        </label>
+        <input type="checkbox" class="" value="smoking" name="smoking[]" id="smoking">
+
+      </div>
+  </div>
+
+    <!-- <input type="submit" value="Filter" class="btn filter-button" id="" /> -->
   </form>
-  <ul class="list-inline">
+  </form>
+
+
+
+
+<!--   <ul class="list-inline">
     <li>
       <div class="check-choices">
         <input type="checkbox" value="" id="check01">
@@ -31,7 +54,8 @@
         </label>
       </div>
     </li>
-  </ul>
+  </ul> -->
+
 </div>
 
 
