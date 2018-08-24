@@ -37,8 +37,8 @@ puts 'Finished!'
 puts 'Creating 4 deals'
 Time.zone = 'Europe/Copenhagen'
 
-start_time = DateTime.parse("2018-08-24 23:00:00 +0200")
-end_time = DateTime.parse("2018-08-24 23:30:00 +0200")
+start_time = DateTime.parse("2018-08-24 22:00:00 +0200")
+end_time = DateTime.parse("2018-08-24 23:00:00 +0200")
 deal1 = Deal.new(description: "Double up on alcohol", start_time: start_time, end_time: end_time)
 deal1.bar = bar1
 deal1.type = type1

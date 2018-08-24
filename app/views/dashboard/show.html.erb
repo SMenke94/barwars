@@ -50,30 +50,31 @@
       <h1 class="my-deals">My saved deals</h1>
       <div class="scrollable-div pre-scrollable">
         <div class="row">
-          <% 5.times do %>
+        <% current_user.deals.each do |deal| %>
           <div class="col-xs-6">
             <div class="saved-deal">
-              <div class="saved-deal-time">Thursday from 17:00 to 19:00</div>
+              <div class="saved-deal-time">
+                <%= deal.start_time.strftime("%A")%> from <%= deal.start_time.hour %>:<%= deal.start_time.min  %> to <%= deal.end_time.hour %>:<%= deal.end_time.min  %></div>
               <%= link_to "#", class: "deal-bar-button dashboard" do %>
               <div id="bar-button">
-                <h4 class="deal-heading">BEER <span class="deal-price">200 DKK</span></h4>
-                <p class="deal-footing">All bottle beers</p>
+                <h4 class="deal-heading"><%= deal.type.name %> <span class="deal-price"><%= "#{deal.price} #{'DKK' if deal.price}" %></span></h4>
+                <p class="deal-footing"><%= deal.description %></p>
               </div>
               <% end %>
               <ul class="list-inline text-center">
-                <li><div class="saved-bar-name"><strong>Bar name</strong></div></li>
-                <li><div class="saved-bar-address">Nørrebrogade 18 <i class="fas fa-map-marker-alt"></i></div></li>
+                <li><div class="saved-bar-name"><strong><%= deal.bar.name %></strong></div></li>
+                <li><div class="saved-bar-address"><%= deal.bar.address.split(',').join(' ').truncate_words(2) %><i class="fas fa-map-marker-alt"></i></div></li>
               </ul>
             </div>
           </div>
-          <% end %>
+        <% end %>
         </div>
       </div>
       <div class="arrow bounce"><i class="fas fa-angle-down"></i></div>
     </div>
   </div>
+</div>
+</div>
 
-</div>
-</div>
 
 
