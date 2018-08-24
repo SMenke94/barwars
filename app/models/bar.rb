@@ -5,8 +5,8 @@ class Bar < ApplicationRecord
   validates :photo, presence: true
   validates :name, presence: true, uniqueness: true, allow_blank: false
   validates :address, presence: true, allow_blank: false
-  validates :smoking, presence: true
-  validates :dancing, presence: true
+  validates :smoking, presence: true, inclusion: { in: [ true, false ] }
+  validates :dancing, presence: true, inclusion: { in: [ true, false ] }
   validates :phone_number, presence: true, format: { with: /\d\s*\d\s*\d\s*\d\s*\d\s*\d\s*\d\s*\d/,
   message: "Please enter a valid 8 digit Danish phone number (exclude +45)." }
   validates :website, format: { with: /https?:\/\/[\S]+/,
