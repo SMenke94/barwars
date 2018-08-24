@@ -1,62 +1,38 @@
 <div id="show-filters" class="text-center slideup">
 
   <div class="form-group">
-    <!-- <label class="control-label check_boxes optional">Types</label> -->
     <form action="<%= deals_path %>" method="get", class: "filter-form", data-remote="true">
+
       <div class="category-choices">
         <% @types.each do |type| %>
-        <label for="<%= "type_#{type.id}" %>" class="<%= type.name %> type btn category-choice category-filter">
-        <h5><%= type.name %></h5><i class="<%= type.fa_icon if type.fa_icon %>"></i>
-        </label>
-        <input type="checkbox" class="hidden" value="<%= type.name %>" name="type[]" id="<%= "type_#{type.id}"%>">
+          <label for="<%= "type_#{type.id}" %>" class="<%= type.name %> type btn category-choice category-filter">
+            <h5><%= type.name %></h5>
+            <i class="<%= type.fa_icon if type.fa_icon %>"></i>
+          </label>
+          <input type="checkbox" class="hidden" value="<%= type.name %>" name="type[]" id="<%= "type_#{type.id}"%>">
         <% end %>
-
-
-    <input type="submit" value="Filter" class="btn filter-button hidden" id="goobypls" />
-
-    <div class="form-group">
-    <!-- <label class="control-label check_boxes optional">Types</label> -->
-
-      <!-- dancing -->
-        <label for="dancing" class="dancing-filter">
-        <h5>I Wanna Dance!</h5>
-        </label>
-        <input type="checkbox" class="" value="dancing" name="dancing[]" id="dancing">
-
-      <!-- smoking -->
-        <label for="smoking" class="smoking-filter">
-        <h5>No Smoking Please</h5>
-        </label>
-        <input type="checkbox" class="" value="smoking" name="smoking[]" id="smoking">
-
       </div>
+
+
+          <ul class="list-inline">
+            <li>
+              <div class="check-choices">
+                <input type="checkbox" value="dancing" id="check01" name="dancing[]">
+                <label for="check01" class="dancing-filter">I wanna dance!</label>
+              </div>
+            </li>
+            <li>
+              <div class="check-choices">
+                <input type="checkbox" value="smoking" id="check02" name="smoking[]">
+                <label for="check02" class="smoking-filter">No smoking, please</label>
+            </li>
+              </div>
+          </ul>
+
+      <input type="submit" value="Filter" class="btn filter-button hidden" id="goobypls" />
+    </form>
+
   </div>
-
-    <!-- <input type="submit" value="Filter" class="btn filter-button" id="" /> -->
-  </form>
-
-
-
-
-
-<!--   <ul class="list-inline">
-    <li>
-      <div class="check-choices">
-        <input type="checkbox" value="" id="check01">
-        <label for="check01">
-          I wanna dance!
-        </label>
-      </li>
-      <li>
-        <input type="checkbox" value="" id="check02">
-        <label for="check02">
-          No smoking, please
-        </label>
-      </div>
-    </li>
-  </ul> -->
-
-</div>
 </div>
 
 

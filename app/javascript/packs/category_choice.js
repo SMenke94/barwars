@@ -1,4 +1,4 @@
-const delayInMilliseconds = 100
+const delayInMilliseconds = 10
 
 $(document).ready(function(){
   $(".category-choice").click(function(){
@@ -19,7 +19,7 @@ const filterbutton = document.getElementById("filter-button");
       });
     });
 
-    const dancing = document.querySelectorAll("#dancing");
+    const dancing = document.querySelectorAll("#check01");
     dancing.forEach(function(dance) {
       dance.addEventListener("click", (event) => {
         setTimeout(function() {
@@ -28,7 +28,7 @@ const filterbutton = document.getElementById("filter-button");
       });
     });
 
-    const smoking = document.querySelectorAll("#smoking");
+    const smoking = document.querySelectorAll("#check02");
     smoking.forEach(function(smoke) {
       smoke.addEventListener("click", (event) => {
         setTimeout(function() {
