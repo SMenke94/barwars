@@ -18,13 +18,12 @@ class DealsController < ApplicationController
       cookies[:current_location] = @current_location.to_json
     end
 
-    if @deals.nil?
+    if @deals.blank?
       @deals = Deal.all.select(&:valid_now?)
     end
   end
 
   def show
-
     @deal = Deal.find(params[:id])
     @bar = Bar.where.not(latitude: nil, longitude: nil)
 

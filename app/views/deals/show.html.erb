@@ -9,7 +9,6 @@
         <%= Geocoder::Calculations.distance_between([@current_location[0],@current_location[1]], [@deal.bar.latitude,@deal.bar.longitude]).round(1) %> km from you
       </div>
       <div id="map" style="width: 750px; height: 300px;" data-markers="<%= @markers.to_json %>"></div>
-
     </div>
     <%= link_to "Show Map", "#", id: "show-map" %>
     <h2 class="deal-number">Deal #<%= @deal.id %></h2>

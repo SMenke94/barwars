@@ -37,29 +37,29 @@ puts 'Finished!'
 puts 'Creating 4 deals'
 Time.zone = 'Europe/Copenhagen'
 
-start_time = DateTime.parse("2018-08-23 23:00:00 +0200")
-end_time = DateTime.parse("2018-08-23 23:30:00 +0200")
+start_time = DateTime.parse("2018-08-24 23:00:00 +0200")
+end_time = DateTime.parse("2018-08-24 23:30:00 +0200")
 deal1 = Deal.new(description: "Double up on alcohol", start_time: start_time, end_time: end_time)
 deal1.bar = bar1
 deal1.type = type1
 deal1.save!
 
-start_time = DateTime.parse("2018-08-23 12:30:00 +0200")
-end_time = DateTime.parse("2018-08-23 23:30:00 +0200")
+start_time = DateTime.parse("2018-08-24 12:30:00 +0200")
+end_time = DateTime.parse("2018-08-24 23:30:00 +0200")
 deal2 = Deal.new(description: "Two for one", start_time: start_time, end_time: end_time, price: 10)
 deal2.bar = bar1
 deal2.type = type2
 deal2.save!
 
-start_time = DateTime.parse("2018-08-23 14:30:00 +0200")
-end_time = DateTime.parse("2018-08-23 23:00:00 +0200")
+start_time = DateTime.parse("2018-08-24 14:30:00 +0200")
+end_time = DateTime.parse("2018-08-24 23:00:00 +0200")
 deal3 = Deal.new(description: "All drinks on the menu", start_time: start_time, end_time: end_time, price: 200)
 deal3.bar = bar2
 deal3.type  = type3
 deal3.save!
 
-start_time = DateTime.parse("2018-08-23 21:30:00 +0200")
-end_time = DateTime.parse("2018-08-23 23:30:00 +0200")
+start_time = DateTime.parse("2018-08-24 21:30:00 +0200")
+end_time = DateTime.parse("2018-08-24 23:30:00 +0200")
 deal4 = Deal.new(description: "It's your birthday! Get a free bottle", start_time: start_time, end_time: end_time, price: 100)
 deal4.bar = bar2
 deal4.type = type4
