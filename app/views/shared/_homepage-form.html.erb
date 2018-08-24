@@ -12,6 +12,8 @@
   </div>
   <p class="distance-home"><i class="fas fa-map-marker-alt"></i> km</p>
 
-  <%= submit_tag("Search", id: "search-submit") %>
+  <%= button_tag(type: 'submit', id: "search-submit", class: "pulse") do %>
+    <span id="changingword" style="transition: none;"><i class="fas fa-bolt"></i></span>
+    <% end %>
   <% end %>
 </div>
