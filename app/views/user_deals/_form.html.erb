@@ -1,0 +1,9 @@
+<%= simple_form_for([deal, user_deal]) do |f| %>
+  <%= button_tag(type: 'submit', id: "save-icon") do %>
+    <% if user_deal.persisted? %>
+      <i class="fas fa-heart"></i>
+    <% else %>
+      <i class="fas fa-arrow-down"></i>
+    <% end %>
+  <% end %>
+<% end %>
