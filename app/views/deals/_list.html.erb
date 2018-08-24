@@ -5,6 +5,10 @@
         <div class="type-icon">
            <i class="<%= deal.type.fa_icon if deal.type.fa_icon %>"></i>
         </div>
+
+        <% @user_deal = UserDeal.find_by(user: current_user, deal: deal) %>
+        <%= render "user_deals/form", deal: deal, user_deal: @user_deal || UserDeal.new %>
+
         <div class="bar-name">
          <p><%= deal.bar.name %></p>
        </div>

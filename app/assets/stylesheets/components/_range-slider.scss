@@ -113,6 +113,7 @@ input::-moz-focus-outer {
   border-radius: 25px;
   width: 250px;
   &:hover {
+    box-shadow: 0 0 2px #ffe030;
     background-color: #ffe030;
     color: #233142;
     border: 3px solid #ffe030;
