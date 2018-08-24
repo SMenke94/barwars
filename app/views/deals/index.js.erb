@@ -1,5 +1,5 @@
-console.log("<%= @deals.count %>")
 function addDeals(dealsListHTML) {
+console.log("<%= @deals.count %>")
   const dealsList = document.getElementById('deals-list');
   dealsList.innerHTML = '';
   dealsList.insertAdjacentHTML('beforeend', dealsListHTML);

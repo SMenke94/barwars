@@ -7,7 +7,7 @@ puts 'Creating 2 bars'
 bar1 = Bar.new(name: "Mexi Bar", opening_hour: "17:00", address: "Elmegade 27, Nørrebro", photo: "http://www.mexibar.dk/wp-content/uploads/2018/05/2014-03-26-23.28.07-1024x683.jpg", contact_info: "64646464", smoking: false, dancing: false )
 bar1.save!
 
-bar2 = Bar.new(name: "Kassen", opening_hour: "10:00", address: "Nørrebrogade 18, Nørrebro", photo: "http://druk.dk/billeder/kassen.png", contact_info: "12345678", smoking: false, dancing: true )
+bar2 = Bar.new(name: "Kassen", opening_hour: "10:00", address: "Nørrebrogade 18, Nørrebro", photo: "http://druk.dk/billeder/kassen.png", contact_info: "12345678", smoking: true, dancing: true )
 bar2.save!
 puts 'Finished!'
 
