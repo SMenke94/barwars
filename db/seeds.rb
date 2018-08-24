@@ -64,6 +64,41 @@ deal4 = Deal.new(description: "It's your birthday! Get a free bottle", start_tim
 deal4.bar = bar2
 deal4.type = type4
 deal4.save!
+
+start_time = DateTime.parse("2018-08-24 21:30:00 +0200")
+end_time = DateTime.parse("2018-08-24 23:30:00 +0200")
+deal4 = Deal.new(description: "It's your birthday! Get a free bottle", start_time: start_time, end_time: end_time, price: 100)
+deal4.bar = bar2
+deal4.type = type4
+deal4.save!
+
+start_time = DateTime.parse("2018-08-24 21:30:00 +0200")
+end_time = DateTime.parse("2018-08-24 23:30:00 +0200")
+deal4 = Deal.new(description: "It's your birthday! Get a free bottle", start_time: start_time, end_time: end_time, price: 100)
+deal4.bar = bar2
+deal4.type = type4
+deal4.save!
+
+start_time = DateTime.parse("2018-08-24 21:30:00 +0200")
+end_time = DateTime.parse("2018-08-24 23:30:00 +0200")
+deal4 = Deal.new(description: "It's your birthday! Get a free bottle", start_time: start_time, end_time: end_time, price: 100)
+deal4.bar = bar1
+deal4.type = type2
+deal4.save!
+
+start_time = DateTime.parse("2018-08-24 21:30:00 +0200")
+end_time = DateTime.parse("2018-08-24 23:30:00 +0200")
+deal4 = Deal.new(description: "It's your birthday! Get a free bottle", start_time: start_time, end_time: end_time, price: 100)
+deal4.bar = bar2
+deal4.type = type3
+deal4.save!
+
+start_time = DateTime.parse("2018-08-24 21:30:00 +0200")
+end_time = DateTime.parse("2018-08-24 23:30:00 +0200")
+deal4 = Deal.new(description: "It's your birthday! Get a free bottle", start_time: start_time, end_time: end_time, price: 100)
+deal4.bar = bar1
+deal4.type = type1
+deal4.save!
 puts 'Finished!'
 
 
