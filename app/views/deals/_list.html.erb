@@ -1,4 +1,7 @@
 <div class="row">
+
+<% if deals.blank? == false %>
+
     <% deals.each do |deal| %>
     <div class="col-xs-3">
       <div class="deal-info deal-bg-img" style="background-image: url(<%= deal.bar.photo %>);">
@@ -39,4 +42,11 @@
     </div>
   </div>
   <% end %>
+
+<% else %>
+  <h3>No Results Found. Please try reviewing/removing some filters and try again.</h3>
+<% end %>
+
+
+
 </div>

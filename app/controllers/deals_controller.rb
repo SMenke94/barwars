@@ -14,10 +14,9 @@ class DealsController < ApplicationController
       @deals = @dancing
     elsif params[:smoking]
       @deals = @nosmoking
-    else
+    elsif @deal.nil?
       @deals = Deal.all.select(&:valid_now?)
     end
-
 
     if params[:q]
       @deals = Bar.near(params[:q], params[:distance]).map(&:deals).flatten.select!(&:valid_now?)
@@ -25,9 +24,10 @@ class DealsController < ApplicationController
       cookies[:current_location] = @current_location.to_json
     end
 
-    if @deals.blank?
+    if @deals.nil?
       @deals = Deal.all.select(&:valid_now?)
     end
+
   end
 
   def show
@@ -57,11 +57,10 @@ class DealsController < ApplicationController
     @nosmoking = []
     @nosmokingdeals = Deal.all
     @nosmokingdeals.each do |deal|
-      if deal.bar.smoking = false
+      unless deal.bar.smoking
         @nosmoking << deal
       end
     end
   end
-
 
 end
