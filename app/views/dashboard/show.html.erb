@@ -55,6 +55,7 @@
       <div class="scrollable-div pre-scrollable">
         <div class="row">
         <% current_user.deals.each do |deal| %>
+        <% if deal.end_time.to_date >= DateTime.current.to_date %>
           <% if deal.start_time.to_date == DateTime.current.to_date %>
           <div class="col-xs-6">
             <div class="saved-deal">
@@ -94,7 +95,7 @@
             </div>
           </div>
           <% end %>
-
+          <% end %>
         <% end %>
         </div>
       </div>
