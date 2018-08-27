@@ -14,7 +14,11 @@
     <% if user_signed_in? %>
 
     <!-- Links when logged in -->
-    <%= link_to "My deals", dashboard_path, class: "navbar-barwars-item navbar-barwars-link my-deals-button" %>
+    <%= link_to dashboard_path do %>
+      <button class="basket navbar-barwars-item navbar-barwars-link my-deals-button">
+        My deals
+      </button>
+    <% end %>
 
     <!-- Avatar with dropdown menu -->
     <div class="navbar-barwars-item">

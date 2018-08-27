@@ -1,3 +1,7 @@
+<% content_for :meta_title, "#{@deal.type} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @deal.description %>
+<% content_for :meta_image, cl_image_path(@deal.bar.photo) %>
+
 <div class="showpage-wrapper">
   <div class="deal-information">
     <div class="picture-banner" style="background-image: url(<%= @deal.bar.photo %>)">

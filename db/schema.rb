@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2018_08_27_090420) do
     t.string "website"
     t.string "yelp_id"
     t.integer "yelp_rating"
+
     t.index ["category_id"], name: "index_bars_on_category_id"
   end
 
