@@ -29,7 +29,7 @@
           </li>
           <li>
             <p class="heading"><i class="far fa-clock"></i></p>
-            <p class="footing"><%= deal.start_time.hour %>:<%= deal.start_time.min %></p>
+            <p class="footing"><%=deal.start_time.strftime("%H:%M") %></p>
           </li>
         </ul>
         <%= link_to deal_path(deal), class: "deal-bar-button" do %>
