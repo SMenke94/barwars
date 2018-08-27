@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_24_142739) do
+ActiveRecord::Schema.define(version: 2018_08_27_090420) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,9 @@ ActiveRecord::Schema.define(version: 2018_08_24_142739) do
     t.string "phone_number"
     t.string "email"
     t.string "website"
+    t.string "yelp_id"
+    t.integer "yelp_rating"
+
     t.index ["category_id"], name: "index_bars_on_category_id"
   end
 
