@@ -31,13 +31,14 @@ class DealsController < ApplicationController
 
   def show
     @deal = Deal.find(params[:id])
-    @bar = Bar.where.not(latitude: nil, longitude: nil)
 
     @markers = [{
       lat: @deal.bar.latitude,
       lng: @deal.bar.longitude,
       infoWindow: { content: render_to_string(partial: "/shared/map-box", locals: { deal: @deal }) }
     }]
+
+    @gmaps_direction_link = @deal.get_there_from(cookies[:current_location])
   end
 
   def weekly_deals
