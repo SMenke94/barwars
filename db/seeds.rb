@@ -133,7 +133,7 @@ scala.save!
 puts "Scala"
 
 kattens = Bar.new(
-  name: "Kattens kælder",
+  name: "Kattens Bodega",
   address: "Fælledvej 19, Nørrebro",
   photo: "https://s3-media3.fl.yelpcdn.com/bphoto/drqP5Gd0sVrFV117ktjXkA/348s.jpg",
   phone_number: "35377771",
