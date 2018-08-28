@@ -29,6 +29,14 @@ class Deal < ApplicationRecord
   def started?
     start_time < Time.zone.now
   end
+
+  def get_there_from(current_coords)
+    return nil if current_coords.nil?
+    base_url = "https://www.google.com/maps/dir/"
+    coord_strings = current_coords[1..-2]
+    bar_coords = "/#{bar.latitude},#{bar.longitude}"
+    base_url + coord_strings + bar_coords
+  end
 end
 
 
