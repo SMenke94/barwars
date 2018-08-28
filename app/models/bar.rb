@@ -21,11 +21,11 @@ class Bar < ApplicationRecord
   def set_yelp_data
     url = "https://api.yelp.com/v3/businesses/search"
     params = { term: self.name, location: self.address }
-    response = HTTP.auth("Bearer #{ENV["YELP_API_KEY"]}").get(url, params: params)
-    if response['businesses']
-      @result = response.parse['businesses'][0]
-      self.yelp_id = @result['id']
-      self.yelp_rating = @result['rating']
+    response = HTTP.auth("Bearer #{ENV["YELP_API_KEY"]}").get(url, params: params).parse
+    if !response.nil? && !response['businesses'].empty?
+      result = response['businesses'][0]
+      self.yelp_id = result['id']
+      self.yelp_rating = result['rating']
     end
   end
 end
