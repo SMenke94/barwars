@@ -33,13 +33,13 @@
           Full name
         </div>
         <div class="profile-fullname input">
-          <%= current_user.first_name %> <%= current_user.last_name %>
+          <%= current_user.full_name %>
         </div>
         <div class="profile-username label">
-          Username
+          Full name
         </div>
         <div class="profile-username input">
-          <%= current_user.username %>
+          Username
         </div>
         <div class="profile-email label">
           Email address
@@ -54,49 +54,7 @@
       <h1 class="my-deals">My saved deals</h1>
       <div class="scrollable-div pre-scrollable">
         <div class="row">
-        <% current_user.deals.each do |deal| %>
-        <% if deal.end_time.to_date >= DateTime.current.to_date %>
-          <% if deal.start_time.to_date == DateTime.current.to_date %>
-          <div class="col-xs-6">
-            <div class="saved-deal">
-              <div class="saved-deal-time">
-                <%= deal.start_time.strftime("%A") + " from " + deal.start_time.strftime("%H:%M")%>
-                to
-                <%= deal.end_time.strftime("%H:%M") %>
-                </div>
-              <%= link_to deal_path(deal), class: "deal-bar-button dashboard" do %>
-              <div id="bar-button">
-                <h4 class="deal-heading"><%= deal.type.name %> <span class="deal-price"><%= "#{deal.price} #{'DKK' if deal.price}" %></span></h4>
-                <p class="deal-footing"><%= deal.description %></p>
-              </div>
-              <% end %>
-              <ul class="list-inline text-center">
-                <li><div class="saved-bar-name"><strong><%= deal.bar.name %></strong></div></li>
-                <li><div class="saved-bar-address"><%= deal.bar.address.split(',').join(' ').truncate_words(2) %><i class="fas fa-map-marker-alt"></i></div></li>
-              </ul>
-            </div>
-            <p class="active-deal">Active</p>
-          </div>
-          <% else %>
-            <div class="col-xs-6">
-            <div class="saved-deal">
-              <div class="saved-deal-time">
-                <%= deal.start_time.strftime("%A")%> from <%= deal.start_time.hour %>:<%= deal.start_time.min  %> to <%= deal.end_time.hour %>:<%= deal.end_time.min  %></div>
-              <%= link_to "#", class: "deal-bar-button dashboard" do %>
-              <div id="bar-button">
-                <h4 class="deal-heading"><%= deal.type.name %> <span class="deal-price"><%= "#{deal.price} #{'DKK' if deal.price}" %></span></h4>
-                <p class="deal-footing"><%= deal.description %></p>
-              </div>
-              <% end %>
-              <ul class="list-inline text-center">
-                <li><div class="saved-bar-name"><strong><%= deal.bar.name %></strong></div></li>
-                <li><div class="saved-bar-address"><%= deal.bar.address.split(',').join(' ').truncate_words(2) %><i class="fas fa-map-marker-alt"></i></div></li>
-              </ul>
-            </div>
-          </div>
-          <% end %>
-          <% end %>
-        <% end %>
+          <%= render 'shared/my-deal' %>
         </div>
       </div>
       <% if current_user.deals.count > 4 %>
@@ -104,7 +62,6 @@
       <% end %>
     </div>
   </div>
-</div>
 </div>
 
 

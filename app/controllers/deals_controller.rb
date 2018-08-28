@@ -41,6 +41,23 @@ class DealsController < ApplicationController
     @gmaps_direction_link = @deal.get_there_from(cookies[:current_location])
   end
 
+  def weekly_deals
+    today = Date.today
+    monday = (today - today.wday) + 1
+    sunday = monday + 6
+    weekly_deals = Deal.where("deals.start_time < ? AND deals.start_time > ?", sunday.to_datetime, monday.to_datetime)
+    @future_deals = (today + 1..sunday).map do |day|
+      deals = weekly_deals.select { |deal| deal.start_time.to_date == day}
+      { deal_count: deals.count, bar_count: deals.map(&:bar).uniq.count, day: day  }
+    end
+    @past_deals = (monday...today).map do |day|
+      deals = weekly_deals.select { |deal| deal.start_time.to_date == day }
+      { deal_count: deals.count, bar_count: deals.map(&:bar).uniq.count, day: day }
+    end
+    deals = weekly_deals.select { |deal| deal.start_time.to_date == today }
+    @today_stats = { deal_count: deals.count, bar_count: deals.map(&:bar).uniq.count }
+  end
+
   private
 
   def dancing_deals

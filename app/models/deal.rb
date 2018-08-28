@@ -30,6 +30,16 @@ class Deal < ApplicationRecord
     start_time < Time.zone.now
   end
 
+
+  def future_deal?
+    end_time >= DateTime.current
+  end
+
+  def past_deal?
+    end_time <= DateTime.current
+  end
+
+
   def get_there_from(current_coords)
     return nil if current_coords.nil?
     base_url = "https://www.google.com/maps/dir/"

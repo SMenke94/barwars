@@ -1,0 +1,66 @@
+<div class="container text-center">
+  <h1 class="weekly-deals-header">Weekly deals</h1>
+</div>
+
+<div class="weekly-deals-wrapper">
+  <% @past_deals.each do |stats_hash| %>
+  <div class="past-day">
+    <div class="past-week-date">
+        <div class="past-week-date-number"><%= stats_hash[:day].day %></div>
+        <h5 class="past-today-weekday"><%= stats_hash[:day].strftime("%A") %></h5>
+    </div>
+    <ul class="past-weekday-stats text-center">
+      <li class="number-of-bars">
+        How many bars?
+        <p class="count"><%= stats_hash[:bar_count] %></p>
+      </li>
+      <li class="number-of-deals">
+        How many deals?
+        <p class="count"><%= stats_hash[:deal_count] %></p>
+      </li>
+      <%= link_to "Get notified", "#", id: "notified-deals-button", class: "disabled" %>
+    </ul>
+  </div>
+  <% end %>
+
+  <div class="today">
+    <h5 class="today-header">Today</h5>
+    <div class="week-date">
+      <div class="week-date-number"><%= Date.today.day %></div>
+      <h5 class="today-weekday"><%= Date.today.strftime("%A") %></h5>
+    </div>
+    <ul class="weekday-stats text-center list-inline">
+      <li class="number-of-bars">
+        How many bars?
+        <p class="count"><%= @today_stats[:bar_count] %></p>
+      </li>
+      <li class="number-of-deals">
+        How many deals?
+        <p class="count"><%= @today_stats[:deal_count] %></p>
+      </li>
+      <%= link_to "TODAYS DEALS", deals_path, id: "see-todays-deals-button" %>
+    </ul>
+  </div>
+
+  <% @future_deals.each do |stats_hash| %>
+  <div class="future-day">
+      <div class="future-week-date">
+        <div class="future-week-date-number"><%= stats_hash[:day].day %></div>
+        <h5 class="future-today-weekday"><%= stats_hash[:day].strftime("%A") %></h5>
+      </div>
+      <ul class="future-weekday-stats text-center">
+        <li class="number-of-bars">
+          How many bars?
+          <p class="count"><%= stats_hash[:bar_count] %></p>
+        </li>
+        <li class="number-of-deals">
+          How many deals?
+          <p class="count"><%= stats_hash[:deal_count] %></p>
+        </li>
+        <%= link_to "Get notified", "#", id: "notified-deals-button" %>
+      </ul>
+  </div>
+  <% end %>
+
+
+</div> <!-- Closing wrapper -->
