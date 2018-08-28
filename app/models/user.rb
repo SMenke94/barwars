@@ -6,9 +6,7 @@ class User < ApplicationRecord
   has_many :user_deals
   has_many :deals, through: :user_deals
 
-  validates :first_name, presence: true, allow_blank: false
-  validates :last_name, presence: true, allow_blank: false
-  validates :username, uniqueness: true, presence: true, allow_blank: false
+  validates :full_name, presence: true, allow_blank: false
 
   mount_uploader :photo, PhotoUploader
 

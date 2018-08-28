@@ -4,7 +4,4 @@ class PagesController < ApplicationController
 
   def loading
   end
-
-  def weekly_deals
-  end
 end

@@ -29,6 +29,15 @@ class Deal < ApplicationRecord
   def started?
     start_time < Time.zone.now
   end
+
+  def future_deal?
+    end_time >= DateTime.current
+  end
+
+  def past_deal?
+    end_time <= DateTime.current
+  end
+
 end
 
 

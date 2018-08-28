@@ -45,15 +45,6 @@
     <%= link_to t(".sign_up", default: "Register"), "#", class: "navbar-barwars-item navbar-barwars-link barwars-register", "data-toggle": "modal", "data-target": "#exampleModal" %>
 
     <%= link_to t(".sign_in", default: "LOG IN"), "#", class: "navbar-barwars-item navbar-barwars-link barwars-signin", "data-toggle": "modal", "data-target": "#exampleModal" %>
-
-
-    <%= link_to "#", "data-toggle": "modal", "data-target": "#real-signin" do %>
-      <div> Sign-in</div>
-    <% end %>
-
-    <%= link_to "#", "data-toggle": "modal", "data-target": "#real-signup" do %>
-      <div> Sign-up</div>
-    <% end %>
     <% end %>
   </div>
 
@@ -70,18 +61,4 @@
   </div>
 </div>
 
-<div class="modal fade" id="real-signin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content signin">
-      <%= render 'shared/sign-in-form' %>
-    </div>
-  </div>
-</div>
 
-<div class="modal fade" id="real-signup" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content signin">
-      <%= render 'shared/sign-up-form' %>
-    </div>
-  </div>
-</div>

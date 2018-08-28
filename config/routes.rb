@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   end
   get "dashboard", to: "dashboard#show", as: "dashboard"
   get 'loading', to: 'pages#loading'
-  get 'weekly-deals', to: 'pages#weekly_deals'
+  get 'weekly-deals', to: 'deals#weekly_deals'
 end
