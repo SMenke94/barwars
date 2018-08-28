@@ -19,8 +19,7 @@
         <p class="count"><%= stats_hash[:deal_count] %></p>
       </li>
       <%= link_to "Get notified", "#", id: "notified-deals-button", class: "disabled" %>
-    </ul>
-  </div>
+    </ul></div>
   <% end %>
 
   <div class="today">
@@ -39,8 +38,7 @@
         <p class="count"><%= @today_stats[:deal_count] %></p>
       </li>
       <%= link_to "TODAYS DEALS", deals_path, id: "see-todays-deals-button" %>
-    </ul>
-  </div>
+    </ul></div>
 
   <% @future_deals.each do |stats_hash| %>
   <div class="future-day">
@@ -58,8 +56,7 @@
           <p class="count"><%= stats_hash[:deal_count] %></p>
         </li>
         <%= link_to "Get notified", "#", id: "notified-deals-button" %>
-      </ul>
-  </div>
+      </ul></div>
   <% end %>
 
 

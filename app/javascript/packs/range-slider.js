@@ -20,6 +20,7 @@ rangeSlider();
 
 $('#show-map').on('click', function(){
   $('#map').toggleClass("is-visible");
+  $('#route-to').toggleClass("is-visible");
 });
 
 
@@ -37,3 +38,6 @@ $('#show-map').on('click', function(){
       }, 3000);
 
   })();
+
+
+

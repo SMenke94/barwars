@@ -5,7 +5,7 @@
 <% else %>
   <% deals.each do |deal| %>
       <div class="col-xs-3">
-        <div class="deal-info deal-bg-img" style="background-image: url(<%= deal.bar.photo %>);">
+        <div class="deal-info deal-bg-img" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.2)), url(<%= deal.bar.photo %>);">
           <div class="type-icon">
              <i class="<%= deal.type.fa_icon if deal.type.fa_icon %>"></i>
           </div>
@@ -44,7 +44,4 @@
     </div>
   <% end %>
 <% end %>
-
-
-
 </div>

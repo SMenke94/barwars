@@ -43,11 +43,11 @@ class DealsController < ApplicationController
 
   def weekly_deals
     today = Date.today
-    monday = (today - today.wday) + 1
+    monday = (today - today.wday)
     sunday = monday + 6
-    weekly_deals = Deal.where("deals.start_time < ? AND deals.start_time > ?", sunday.to_datetime, monday.to_datetime)
+    weekly_deals = Deal.where("deals.start_time < ? OR deals.start_time > ?", sunday.to_datetime, monday.to_datetime)
     @future_deals = (today + 1..sunday).map do |day|
-      deals = weekly_deals.select { |deal| deal.start_time.to_date == day}
+      deals = weekly_deals.select { |deal| deal.start_time.to_date == day }
       { deal_count: deals.count, bar_count: deals.map(&:bar).uniq.count, day: day  }
     end
     @past_deals = (monday...today).map do |day|

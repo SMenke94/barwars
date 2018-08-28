@@ -6,4 +6,3 @@ $("#filter-button").click(function () {
   else
     $("#show-filters").removeClass("slidedown").addClass("slideup");
 });
-
