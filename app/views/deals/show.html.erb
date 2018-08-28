@@ -1,9 +1,6 @@
 <% content_for :meta_title, "#{@deal.type} is on #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, @deal.description %>
 <% content_for :meta_image, cl_image_path(@deal.bar.photo) %>
-<% if @gmaps_direction_link%>
-  <% link_to "Get Directions", @gmaps_direction_link, target: "_blank" %>
-<% end %>
 
 <div class="showpage-wrapper">
   <div class="deal-information">
@@ -15,7 +12,11 @@
       <div class="distance-from-you"> <i class="fas fa-map-marker-alt"></i> &nbsp;
         <%= Geocoder::Calculations.distance_between([@current_location[0],@current_location[1]], [@deal.bar.latitude,@deal.bar.longitude]).round(1) %> km from you
       </div>
-      <div id="map" style="width: 750px; height: 300px;" data-markers="<%= @markers.to_json %>"></div>
+      <div id="map" style="width: 750px; height: 300px;" data-markers="<%= @markers.to_json %>">
+      </div>
+      <% if @gmaps_direction_link%>
+        <%= link_to "Take me there", @gmaps_direction_link, target: "_blank", id: "route-to" %>
+      <% end %>
     </div>
     <%= link_to "Show Map", "#", id: "show-map" %>
     <h2 class="deal-number">Deal #<%= @deal.id %></h2>
@@ -34,9 +35,13 @@
         <h5 class="contact-info text-center">Contact information</h5>
         <ul class="info-list">
           <li><i class="fas fa-map-marker-alt"></i>&nbsp; <%= @deal.bar.address %></li>
-          <li><i class="fas fa-phone"></i>&nbsp;Phonenumber</li>
-          <li><i class="fas fa-at"></i>&nbsp;Email address</li>
-          <li><i class="fab fa-internet-explorer">&nbsp;</i>Website</li>
+          <li><i class="fas fa-phone"></i>&nbsp;+45 <%= @deal.bar.phone_number %></li>
+          <% if !@deal.bar.email.nil? %>
+            <li><i class="fas fa-at"></i>&nbsp;<%= @deal.bar.email %></li>
+          <% end %>
+          <% if !@deal.bar.website.nil? %>
+            <li><i class="fab fa-internet-explorer"></i>&nbsp;<%= @deal.bar.website %></li>
+          <% end %>
         </ul>
       </div>
       <div class="verticalLine"></div>

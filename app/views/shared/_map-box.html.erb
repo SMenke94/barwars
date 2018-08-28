@@ -2,7 +2,6 @@
   <div class="type-icon">
     <i class="<%= @deal.type.fa_icon if @deal.type.fa_icon %>"></i>
   </div>
-  <%= link_to "Take me there", "#", class: "take-me-there"  %>
   <div class="distance-to-you"><i class="fas fa-map-marker-alt"></i>&nbsp; <%= Geocoder::Calculations.distance_between([@current_location[0],@current_location[1]], [@deal.bar.latitude,@deal.bar.longitude]).round(1) %> km from you
 
 </div>
