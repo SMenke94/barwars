@@ -1,8 +1,8 @@
 <div class="row">
 
-<% if deals.blank? %>
-  <h5 class="no-results">No Results Found. Please Try Another Search</h5>
-<% else %>
+  <% if deals.blank? %>
+    <h5 class="no-results">No Results Found. Please Try Another Search</h5>
+  <% else %>
   <% deals.each do |deal| %>
       <div class="col-xs-3">
         <div class="deal-info deal-bg-img" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.2)), url(<%= deal.bar.photo %>);">
