@@ -36,10 +36,10 @@
           <%= current_user.full_name %>
         </div>
         <div class="profile-username label">
-          Full name
+          Username
         </div>
         <div class="profile-username input">
-          Username
+          <%= current_user.full_name.split(' ').join('').downcase %>
         </div>
         <div class="profile-email label">
           Email address
@@ -57,7 +57,7 @@
           <%= render 'shared/my-deal' %>
         </div>
       </div>
-      <% if current_user.deals.count > 4 %>
+      <% if current_user.deals.count > 2 %>
         <div class="arrow bounce"><i class="fas fa-angle-down"></i></div>
       <% end %>
     </div>

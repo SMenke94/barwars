@@ -2,6 +2,17 @@ Bar.destroy_all
 Type.destroy_all
 Deal.destroy_all
 
+# A USER
+puts 'Creating user'
+user = User.new(
+  full_name: "Amanda Schjørmann",
+  email: "amandaschjoermann@gmail.com",
+  password: "123456",
+  photo: "https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/32497592_10216332285839012_7014404072291696640_n.jpg?_nc_cat=0&oh=1f254c63ad7b10d964f94d0be7bc521e&oe=5BF5D6C4"
+  )
+user.save!
+puts '1 user done'
+
 # CREATING 5 TYPES
 
 puts 'Creating all types'

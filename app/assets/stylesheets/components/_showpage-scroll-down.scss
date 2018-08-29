@@ -39,6 +39,44 @@
   right: 0;
 }
 
+.product.dashboard-product {
+  height: 125px;
+  #bar-button-showpage {
+  line-height: 0px;
+  position: relative;
+  margin: 0 auto;
+  width: 80%;
+  padding: 0px 0px;
+  text-align: center;
+  border: 3px solid #ffe030;
+  background: rgba(35, 49, 66, 0.9);
+  color: white;
+  border-radius: 50px;
+  top: 0px;
+  z-index: 1000;
+  height: 60px;
+  .deal-price {
+    color: white;
+  }
+  .deal-heading {
+    font-size: 21px;
+    text-transform: uppercase;
+    margin: 8px;
+    color: #ffe030;
+  }
+  .deal-footing {
+    color: rgba(255,255,255,1);
+    font-size: 14px;
+  }
+  h4.deal-heading {
+    margin: 0px;
+    padding: 0px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+  }
+}
+}
+
 .more-deals-wrapper {
   padding: 30px 200px;
 }
