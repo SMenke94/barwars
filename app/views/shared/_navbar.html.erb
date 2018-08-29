@@ -1,5 +1,4 @@
 <div class="navbar-barwars">
-
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-barwars-brand" do %>
   <%= image_tag "logo.png", height: 50 %>
@@ -47,7 +46,7 @@
     <%= link_to t(".sign_in", default: "LOG IN"), "#", class: "navbar-barwars-item navbar-barwars-link barwars-signin", "data-toggle": "modal", "data-target": "#exampleModal" %>
     <% end %>
   </div>
-
+  <%= link_to "TODAYS DEALS", deals_path, id: "todays-deals-button" %>
 </div>
 
 
