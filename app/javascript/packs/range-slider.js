@@ -23,6 +23,11 @@ $('#show-map').on('click', function(){
   $('#route-to').toggleClass("is-visible");
 });
 
+$('#contact-info').on('click', function(){
+  $('.bar-info-box').toggleClass("is-visible");
+  $('.share-box').toggleClass("is-hidden");
+});
+
 
 (function(){
       var words = [
