@@ -95,6 +95,8 @@
 }
 
 .bar-info-box {
+  background-color: #B3B3B3;
+  opacity: 0;
   padding: 0px 10px;
   position: absolute;
   right: 0;
@@ -239,3 +241,142 @@ a#route-to {
 #route-to.is-visible {
   opacity: 1;
 }
+
+#contact-info {
+  font-weight: lighter;
+  transition: 0.4s ease;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top: 1px solid rgba(240,240,240,1);
+  border-bottom: 1px solid rgba(240,240,240,1);
+  border-right: 1px solid rgba(240,240,240,1);
+  padding-top: 10px;
+  text-align: center;
+  font-size: 12px;
+  background-color: transparent;
+  position: absolute;
+  right: -80px;
+  top: 190px;
+  height: 40px;
+  width: 80px;
+  color: rgba(240,240,240,1);
+  &:hover {
+    background-color: rgba(240,240,240,1);
+    border-top: 1px solid rgba(240,240,240,1);
+    border-bottom: 1px solid rgba(240,240,240,1);
+    border-right: 1px solid rgba(240,240,240,1);
+    text-decoration: none;
+    color: #233142;
+  }
+}
+
+.bar-info-box.is-visible {
+  opacity: 1;
+}
+
+.share-box {
+  font-size: 10px;
+  background-color: transparent;
+  padding: 0px 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #233142;
+  width: 200px;
+  height: 100%;
+  .start-time {
+    color: rgba(white, 0.7);
+    margin-top: 10px;
+    font-size: 16px;
+  }
+  .end-time {
+    color: rgba(white, 0.7);
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  .facebook-share {
+    background-color: #233142;
+    color: white;
+    padding: 2px 0px;
+  }
+  .time {
+    font-weight: bold;
+    color: white;
+  }
+}
+
+// FACEBOOK BUTTON
+
+.social-btns .btn,
+.social-btns .btn:before,
+.social-btns .btn .fab {
+  transition: all 0.35s;
+  transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
+}
+.social-btns .btn:before {
+  top: 90%;
+  left: -110%;
+}
+.social-btns .btn .fab {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+.social-btns .btn.facebook:before {
+  background-color: #3b5998;
+}
+.social-btns .btn.facebook .fab {
+  color: #3b5998;
+}
+
+.social-btns .btn:focus:before,
+.social-btns .btn:hover:before {
+  top: -10%;
+  left: -10%;
+}
+.social-btns .btn:focus .fab,
+.social-btns .btn:hover .fab {
+  color: #fff;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.social-btns {
+  height: 60px;
+  margin-bottom: 60px;
+  font-size: 0;
+  text-align: center;
+}
+.social-btns .btn {
+  background-color: #fff;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 28%;
+  box-shadow: 0 5px 15px -5px rgba(0,0,0,0.1);
+  opacity: 0.99;
+}
+.social-btns .btn:before {
+  content: '';
+  width: 120%;
+  height: 120%;
+  position: absolute;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.social-btns .btn .fab {
+  padding-top: 6px;
+  font-size: 35px;
+  vertical-align: center;
+}
+
+a.btn.facebook {
+  margin-top: -7px;
+  z-index: 500;
+}
+
+.share-box.is-hidden {
+  opacity: 0;
+}
+
