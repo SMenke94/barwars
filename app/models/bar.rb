@@ -28,4 +28,8 @@ class Bar < ApplicationRecord
       self.yelp_rating = result['rating']
     end
   end
+
+  def todays_deals
+    deals.select { |deal| deal.start_time.to_date == Date.today }
+  end
 end
