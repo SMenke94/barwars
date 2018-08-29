@@ -1,6 +1,7 @@
 Bar.destroy_all
 Type.destroy_all
 Deal.destroy_all
+User.destroy_all
 
 # A USER
 puts 'Creating user'
