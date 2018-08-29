@@ -22,7 +22,7 @@ class Bar < ApplicationRecord
     url = "https://api.yelp.com/v3/businesses/search"
     params = { term: self.name, location: self.address }
     response = HTTP.auth("Bearer #{ENV["YELP_API_KEY"]}").get(url, params: params).parse
-    if !response.nil? && !response['businesses'].nil?
+    if !response.nil? && !response['businesses'].empty?
       result = response['businesses'][0]
       self.yelp_id = result['id']
       self.yelp_rating = result['rating']
