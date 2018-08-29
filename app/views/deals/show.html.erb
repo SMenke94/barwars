@@ -1,4 +1,4 @@
-<% content_for :meta_title, "#{@deal.type} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_title, "Come drink with me at #{@deal.bar.name}" %>
 <% content_for :meta_description, @deal.description %>
 <% content_for :meta_image, cl_image_path(@deal.bar.photo) %>
 
@@ -12,5 +12,5 @@
 
 <!-- Back to top button -->
 <%= link_to "#", id: "return-to-top" do %>
-<i class="fas fa-chevron-up"></i>
+  <i class="fas fa-chevron-up"></i>
 <% end %>
