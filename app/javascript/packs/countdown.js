@@ -22,7 +22,6 @@ function getCountdown(){
   var seconds_left = (target_date - current_date) / 1000;
 
 if ( seconds_left >= 0 ) {
-  console.log(time_limit);
    if ( (seconds_left * 1000 ) < ( time_limit / 2 ) )  {
      $( '#tiles' ).removeClass('color-full');
      $( '#tiles' ).addClass('color-half');
