@@ -5,9 +5,9 @@ function refreshForm(event) {
   const faIcon = button.querySelector("i");
   let newHTML = "";
   if (faIcon.classList.contains("fa-heart")) {
-    newHTML = '<i class="fas fa-arrow-down"></i>'
-  } else {
     newHTML = '<i class="fas fa-heart"></i>'
+  } else {
+    newHTML = '<i class="fas fa-heart opacity"></i>'
   }
   button.innerHTML = newHTML;
 }
@@ -19,3 +19,4 @@ allForms.forEach((form) => {
     refreshForm(event);
   });
 });
+
