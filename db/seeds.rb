@@ -30,13 +30,11 @@ puts 'Finished!'
 
 puts 'Creating bars...'
 mexibar = Bar.new(
-  name: "Mexi Bar",
-  opening_hour: "17:00",
+  name: "Mexibar",
   address: "Elmegade 27, Nørrebro",
-  photo: "http://www.mexibar.dk/wp-content/uploads/2018/05/2014-03-26-23.28.07-1024x683.jpg",
-  phone_number: "64646464",
-  email: "email@email.com",
-  website: "http://website.com",
+  photo: "https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-8/1898684_649156511799288_877178005_o.jpg?_nc_cat=0&oh=289d074f9f9f3323f5a4b33bf458f5df&oe=5BFEDA56",
+  phone_number: "35377766",
+  website: "http://mexibar.com/",
   smoking: false,
   dancing: false
 )
@@ -696,6 +694,45 @@ end
   deal.type = special_offer
   deal.save!
 end
+
+# MEXIBAR deals
+
+6.times do |n|
+  start_time = DateTime.parse("2018-08-27 19:00:00 +0200") + n
+  end_time = DateTime.parse("2018-08-27 21:30:00 +0200") + n
+  deal = Deal.new(description: "Double up on alcohol in drinks", start_time: start_time, end_time: end_time)
+  deal.bar = mexibar
+  deal.type = happy_hour
+  deal.save!
+end
+
+start_time = DateTime.parse("2018-08-31 15:00:00 +0200")
+end_time = DateTime.parse("2018-08-31 19:00:00 +0200")
+deal = Deal.new(description: "All regular drinks", start_time: start_time, end_time: end_time, price: 35)
+deal.bar = mexibar
+deal.type = special_offer
+deal.save!
+
+start_time = DateTime.parse("2018-08-31 15:00:00 +0200")
+end_time = DateTime.parse("2018-08-31 19:00:00 +0200")
+deal = Deal.new(description: "6 tequila shots", start_time: start_time, end_time: end_time, price: 100)
+deal.bar = mexibar
+deal.type = shots
+deal.save!
+
+start_time = DateTime.parse("2018-08-31 15:00:00 +0200")
+end_time = DateTime.parse("2018-08-31 19:00:00 +0200")
+deal = Deal.new(description: "3 shots", start_time: start_time, end_time: end_time, price: 50)
+deal.bar = mexibar
+deal.type = shots
+deal.save!
+
+start_time = DateTime.parse("2018-08-31 15:00:00 +0200")
+end_time = DateTime.parse("2018-08-31 19:00:00 +0200")
+deal = Deal.new(description: "7 shots", start_time: start_time, end_time: end_time, price: 100)
+deal.bar = mexibar
+deal.type = shots
+deal.save!
 
 puts "FINISHED"
 
