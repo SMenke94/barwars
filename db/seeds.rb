@@ -41,7 +41,7 @@ puts 'Finished!'
 
 puts 'Creating bars...'
 mexibar = Bar.new(
-  name: "Mexibar",
+  name: "Mexi Bar",
   address: "Elmegade 27, Nørrebro",
   photo: "https://scontent-amt2-1.xx.fbcdn.net/v/t31.0-8/1898684_649156511799288_877178005_o.jpg?_nc_cat=0&oh=289d074f9f9f3323f5a4b33bf458f5df&oe=5BFEDA56",
   phone_number: "35377766",
