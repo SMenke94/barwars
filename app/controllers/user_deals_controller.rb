@@ -7,7 +7,10 @@ class UserDealsController < ApplicationController
     @user_deal.user = current_user
     @user_deal.deal = @deal
     if @user_deal.save!
-      redirect_to deals_path
+      respond_to do |format|
+        format.html { redirect_to deals_path}
+        format.js
+      end
     else
       redirect_to deals_path, alert: "Deal not saved"
     end
