@@ -2,61 +2,111 @@
 <% content_for :meta_description, @deal.description %>
 <% content_for :meta_image, cl_image_path(@deal.bar.photo) %>
 
-<div class="showpage-wrapper">
-  <div class="deal-information">
-    <div class="picture-banner" style="background-image: url(<%= @deal.bar.photo %>)">
-      <div class="deal-bar-name"><%= @deal.bar.name %></div>
-      <div class="type-icon large">
-        <i class="<%= @deal.type.fa_icon if @deal.type.fa_icon %>"></i>
-      </div>
-      <div class="distance-from-you"> <i class="fas fa-map-marker-alt"></i> &nbsp;
-        <%= Geocoder::Calculations.distance_between([@current_location[0],@current_location[1]], [@deal.bar.latitude,@deal.bar.longitude]).round(1) %> km from you
-      </div>
-      <div id="map" style="width: 750px; height: 300px;" data-markers="<%= @markers.to_json %>">
-      </div>
-      <% if @gmaps_direction_link%>
-      <%= link_to "Take me there", @gmaps_direction_link, target: "_blank", id: "route-to" %>
-      <% end %>
-    </div>
-    <%= link_to "Show Map", "#", id: "show-map" %>
-    <%= link_to "Contact info", "#", id: "contact-info" %>
-    <h2 class="deal-number">Deal #<%= @deal.id %></h2>
-    <div class="deal-info-footing">
-      <div id="deal-informations">
-        <h4 class="deal-heading text-center">
-          <%= @deal.type.name %><br><span class="deal-price"> <%= "#{@deal.price} #{'DKK' if @deal.price}" %></span>
-        </h4>
-        <p class="deal-footing"><%= @deal.description %></p>
-      </div>
-      <div class="countdown-box">
-        <%= render 'shared/clock' %>
-        <%= render 'shared/countdown' %>
-      </div>
-      <div class="bar-info-box">
-        <h5 class="contact-info text-center">Contact information</h5>
-        <ul class="info-list">
-          <li><i class="fas fa-map-marker-alt"></i>&nbsp; <%= @deal.bar.address %></li>
-          <li><i class="fas fa-phone"></i>&nbsp;+45 <%= @deal.bar.phone_number %></li>
-          <% if !@deal.bar.email.nil? %>
-          <li><i class="fas fa-at"></i>&nbsp;<%= @deal.bar.email %></li>
-          <% end %>
-          <% if !@deal.bar.website.nil? %>
-          <li><i class="fab fa-internet-explorer"></i>&nbsp;<%= @deal.bar.website %></li>
-          <% end %>
-        </ul>
-      </div>
-      <div class="share-box">
-        <div class="start-time text-center">Deal starts at: <span class="time"><%=@deal.start_time.strftime("%H:%M") %></span></div>
-        <div class="end-time text-center">Deal ends at: <span class="time"><%=@deal.end_time.strftime("%H:%M") %></span></div>
-        <p class="facebook-share text-center">Tell your friends you're drinking this!</p>
-        <div class="social-btns">
-          <a class="btn facebook" href="#"><i class="fab fa-facebook-f"></i></a>
+<div id="sliders-container">
+  <p class="more-deals text-center">More deals today at <%= @deal.bar.name %></p>
+  <div class="showpage-wrapper">
+    <div class="deal-information">
+      <div class="picture-banner" style="background-image: url(<%= @deal.bar.photo %>)">
+        <div class="deal-bar-name"><%= @deal.bar.name %></div>
+        <div class="type-icon large">
+          <i class="<%= @deal.type.fa_icon if @deal.type.fa_icon %>"></i>
         </div>
-
+        <div class="distance-from-you"> <i class="fas fa-map-marker-alt"></i> &nbsp;
+          <%= Geocoder::Calculations.distance_between([@current_location[0],@current_location[1]], [@deal.bar.latitude,@deal.bar.longitude]).round(1) %> km from you
+        </div>
+        <div id="map" style="width: 750px; height: 300px;" data-markers="<%= @markers.to_json %>">
+        </div>
+        <% if @gmaps_direction_link%>
+        <%= link_to "Take me there", @gmaps_direction_link, target: "_blank", id: "route-to" %>
+        <% end %>
       </div>
-      <div class="verticalLine"></div>
+      <%= link_to "Show Map", "#", id: "show-map" %>
+      <%= link_to "Contact info", "#", id: "contact-info" %>
+      <h2 class="deal-number">Deal #<%= @deal.id %></h2>
+      <div class="deal-info-footing">
+        <div id="deal-informations">
+          <h4 class="deal-heading text-center">
+            <%= @deal.type.name %><br><span class="deal-price"> <%= "#{@deal.price} #{'DKK' if @deal.price}" %></span>
+          </h4>
+          <p class="deal-footing"><%= @deal.description %></p>
+        </div>
+        <div class="countdown-box">
+          <%= render 'shared/clock' %>
+          <%= render 'shared/countdown' %>
+        </div>
+        <div class="bar-info-box">
+          <h5 class="contact-info text-center">Contact information</h5>
+          <ul class="info-list">
+            <li><i class="fas fa-map-marker-alt"></i>&nbsp; <%= @deal.bar.address %></li>
+            <li><i class="fas fa-phone"></i>&nbsp;+45 <%= @deal.bar.phone_number %></li>
+            <% if !@deal.bar.email.nil? %>
+            <li><i class="fas fa-at"></i>&nbsp;<%= @deal.bar.email %></li>
+            <% end %>
+            <% if !@deal.bar.website.nil? %>
+            <li><i class="fab fa-internet-explorer"></i>&nbsp;<%= @deal.bar.website %></li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="share-box">
+          <div class="start-time text-center">Deal starts at: <span class="time"><%=@deal.start_time.strftime("%H:%M") %></span></div>
+          <div class="end-time text-center">Deal ends at: <span class="time"><%=@deal.end_time.strftime("%H:%M") %></span></div>
+          <p class="facebook-share text-center">Tell your friends you're drinking this!</p>
+          <div class="social-btns">
+            <a class="btn facebook" href="#"><i class="fab fa-facebook-f"></i></a>
+          </div>
+
+        </div>
+        <div class="verticalLine"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+  <div class="more-deals-wrapper">
+    <div class="row">
+      <% @deal.bar.deals.each_with_index do |deal,i| %>
+      <% if deal.start_time.to_date == DateTime.current.to_date && @deal.id != deal.id %>
+      <div class="col-xs-6">
+        <div class="product">
+          <div class='product-upvote'>
+            <div class='product-count'><%= i - 1%></div>
+          </div>
+          <div class='product-body'>
+            <div class="body-inner-wrapper">
+              <div class="to-l">
+                <h3><%= deal.bar.name %></h3>
+                <p><%= deal.bar.address %></p>
+              </div>
+              <div class="to-r">
+                <ul class="list-inline product-controls hidden-sm hidden-xs">
+                  <li><i class="far fa-clock"></i></li>
+                  <li class="clock-time"><%=deal.start_time.strftime("%H:%M") %></li>
+                  <li><i class="fas fa-clock"></i></li>
+                  <li class="clock-time"><%=deal.end_time.strftime("%H:%M") %></li>
+                </ul>
+                <p class="dont-show"><%= deal.bar.address %></p>
+              </div>
+            </div>
+            <%= link_to deal_path(deal), class: "deal-bar-button" do %>
+            <div id="bar-button-showpage">
+              <h4 class="deal-heading"><%= deal.type.name %>&nbsp;<span class="deal-price"> <%= "#{deal.price} #{'DKK' if deal.price}" %></span></h4>
+              <p class="deal-footing"><%= deal.description %></p>
+            </div>
+            <% end %>
+          </div>
+
+        </div>
+      </div>
+      <% end %>
+      <% end %>
     </div>
   </div>
 </div>
 
 
+
+<!-- Back to top button -->
+<%= link_to "#", id: "return-to-top" do %>
+<i class="fas fa-chevron-up"></i>
+<% end %>
