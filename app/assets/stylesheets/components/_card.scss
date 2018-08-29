@@ -18,7 +18,7 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  box-shadow: 0 0 5px rgba(150,150,150,1);
+  box-shadow: 0 0 5px rgba(100,100,100,1);
   margin: 20px 0px;
   display: inline-block;
   border-radius: 4px;
@@ -33,14 +33,14 @@
   text-transform: uppercase;
   vertical-align: middle;
   padding: 0px 5px;
-  padding-top: 10px;
+  padding-top: 12px;
   margin: 0 auto;
   margin-top: 50px;
   text-align: center;
   min-width: 50%;
   max-width: 70%;
   color: white;
-  border: 3px solid white;
+  border: 2px solid white;
 }
 
 .stats {
@@ -91,8 +91,8 @@
 }
 
 .type-icon {
-  text-shadow: 0 0 1px rgba(50,50,50,1);
   color: white;
+  text-shadow: 0 0 1px rgba(50,50,50,1);
   font-size: 25px;
   position: absolute;
   top: 5px;
@@ -170,3 +170,23 @@ a.deal-bar-button:hover {
     opacity: 1;
   }
 }
+
+.Beer {
+
+}
+
+.Happy.Hour {
+}
+
+.Open.Bar {
+}
+
+
+.Special.Offer {
+}
+
+.Shots {
+
+}
+
+
