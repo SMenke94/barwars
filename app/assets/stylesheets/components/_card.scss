@@ -95,10 +95,10 @@
 .type-icon {
   color: white;
   text-shadow: 0 0 1px rgba(50,50,50,1);
-  font-size: 25px;
+  font-size: 20px;
   position: absolute;
-  top: 5px;
-  left: 12px;
+  top: 3px;
+  left: 10px;
   transition: 0.1s ease;
 }
 
@@ -155,40 +155,68 @@ a.deal-bar-button:hover {
 .save-icon {
   transition: 0.3s ease;
   text-shadow: 0 0 1px rgba(10,10,10,1);
-  opacity: 0.8;
+  opacity: 1;
   font-size: 16px;
   position: absolute;
   right: 10px;
   top: 5px;
   color: white;
-  .fas.fa-arrow-down {
-    color: white;
-    border-bottom: 2px solid white;
-    font-size: 14px;
-    right: 14px;
-    top: 7px;
+  .opacity {
+    opacity: 0.4;
+    &:hover {
+    opacity: 1;
+  }
   }
   &:hover {
     opacity: 1;
   }
 }
 
-.Beer {
-
+.color-add {
+  animation: colorchange 1.5s;
+  -webkit-animation: colorchange 1.5s;
 }
 
-.Happy.Hour {
+@keyframes colorchange {
+  0% {
+    background-color: transparent;
+  }
+  25% {
+    color: #233142;
+    background-color: white;
+  }
+  50% {
+    color: #233142;
+    background-color: white;
+  }
+  75% {
+    color: #233142;
+    background-color: white;
+  }
+  100% {
+    background-color: transparent;
+  }
 }
 
-.Open.Bar {
-}
-
-
-.Special.Offer {
-}
-
-.Shots {
-
+@-webkit-keyframes colorchange {
+  0% {
+    background-color: transparent;
+  }
+  25% {
+    color: #233142;
+    background-color: white;
+  }
+  50% {
+    color: #233142;
+    background-color: white;
+  }
+  75% {
+    color: #233142;
+    background-color: white;
+  }
+  100% {
+    background-color: transparent;
+  }
 }
 
 

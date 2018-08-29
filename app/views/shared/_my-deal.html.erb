@@ -1,4 +1,5 @@
-<% current_user.deals.each_with_index do |deal,i| %>
+<% current_user.user_deals.each_with_index do |user_deal,i| %>
+<% deal = user_deal.deal %>
 <% if deal.end_time.to_date >= DateTime.current.to_date %>
 <% if deal.start_time.to_date == DateTime.current.to_date %>
 <div class="col-xs-12">
@@ -27,6 +28,9 @@
         <h4 class="deal-heading"><%= deal.type.name %>&nbsp;<span class="deal-price"> <%= "#{deal.price} #{'DKK' if deal.price}" %></span></h4>
         <p class="deal-footing"><%= deal.description %></p>
       </div>
+      <% end %>
+      <%= link_to user_deal_path(user_deal), id: "delete-button", method: :delete do %>
+        <i class="fas fa-trash-alt"></i>
       <% end %>
     </div>
 
