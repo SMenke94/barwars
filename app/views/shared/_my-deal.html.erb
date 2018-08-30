@@ -1,4 +1,4 @@
-<% current_user.user_deals.each_with_index do |user_deal,i| %>
+<% user_deals.each_with_index do |user_deal,i| %>
 <% deal = user_deal.deal %>
 <% if deal.end_time.to_date >= DateTime.current.to_date %>
 <% if deal.start_time.to_date == DateTime.current.to_date %>
