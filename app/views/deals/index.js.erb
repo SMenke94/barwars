@@ -1,9 +1,9 @@
 function addDeals(dealsListHTML) {
-console.log("<%= @deals.count %>")
-  const dealsList = document.getElementById('deals-list');
-  dealsList.innerHTML = '';
-  dealsList.insertAdjacentHTML('beforeend', dealsListHTML);
-}
+  console.log("<%= @deals.count %>")
+    const dealsList = document.getElementById('deals-list');
+    dealsList.innerHTML = '';
+    dealsList.insertAdjacentHTML('beforeend', dealsListHTML);
+  }
 addDeals('<%= j render partial: "deals/list", locals: { deals: @deals, current_location: @current_location} %>');
 // #grap the #deals-list
 // #remove its children

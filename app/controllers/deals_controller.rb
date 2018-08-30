@@ -1,21 +1,6 @@
 class DealsController < ApplicationController
-
   def index
     @types = Type.all
-    dancing_deals
-    smoking_deals
-
-    if params[:type]
-      @deals = Deal.joins(:type).where(types: {name: params[:type]}).select(&:valid_now?)
-      respond_to do |format|
-        format.html
-        format.js  # <-- idem
-      end
-    elsif params[:dancing]
-      @deals = @dancing.select(&:valid_now?)
-    elsif params[:smoking]
-      @deals = @nosmoking.select(&:valid_now?)
-    end
 
     if params[:q]
       @deals = Bar.near(params[:q], params[:distance]).map(&:deals).flatten.select!(&:valid_now?)
@@ -23,10 +8,35 @@ class DealsController < ApplicationController
       cookies[:current_location] = @current_location.to_json
     end
 
+    if params[:type]
+      types = params[:type].map do |type|
+        Type.find_by(name: type).id
+      end
+      @deals = @deals.select do |deal|
+        types.include?(deal.type_id)
+      end
+    end
+
+    if cookies[:dancing]
+      @deals = @deals.select do |deal|
+        deal.bar.dancing
+      end
+    end
+
+    if params[:smoking]
+      @deals = @deals.select do |deal|
+        deal.bar.smoking
+       end
+     end
+
     if @deals.nil?
       @deals = Deal.all.select(&:valid_now?)
     end
 
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def show
@@ -57,27 +67,4 @@ class DealsController < ApplicationController
     deals = weekly_deals.select { |deal| deal.start_time.to_date == today }
     @today_stats = { deal_count: deals.count, bar_count: deals.map(&:bar).uniq.count }
   end
-
-  private
-
-  def dancing_deals
-    @dancing = []
-    @dancingdeals = Deal.all
-    @dancingdeals.each do |deal|
-      if deal.bar.dancing
-        @dancing << deal
-      end
-    end
-  end
-
-  def smoking_deals
-    @nosmoking = []
-    @nosmokingdeals = Deal.all
-    @nosmokingdeals.each do |deal|
-      unless deal.bar.smoking
-        @nosmoking << deal
-      end
-    end
-  end
-
 end
