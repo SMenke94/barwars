@@ -31,9 +31,11 @@
   position: absolute;
   left: 135px;
   bottom: 20px;
+  z-index: 1000;
 }
 
 #red-beer1 {
+  z-index: 1000;
   -webkit-transform: rotate(20deg);
   width: 50px;
   position: absolute;
@@ -47,6 +49,7 @@
 }
 
 #red-beer2 {
+  z-index: 1000;
   -webkit-transform: rotate(-20deg);
   width: 50px;
   position: absolute;
@@ -75,9 +78,11 @@
 }
 
 #mullet-wrapper {
+  z-index: 1000;
   opacity: 0;
 }
 
 #mullet-wrapper.is-visible {
   opacity: 1;
+  z-index: 1000;
 }
