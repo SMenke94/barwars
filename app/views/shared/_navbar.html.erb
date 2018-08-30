@@ -7,6 +7,10 @@
   <%= link_to weekly_deals_path, class: "weekly-deals-button" do %>
   <div> <i class="fas fa-info-circle"></i> Weekly deals</div>
   <% end %>
+  <!-- Link to daily deals deals -->
+  <%= link_to deals_path({q: params[:q], distance: params[:distance], type: params[:type], dancing: params[:dancing], smoking: params[:smoking]}) do %>
+    <div id="todays-deals-button">TODAYS DEALS</div>
+  <% end %>
   <!-- Right Navigation -->
   <div class="navbar-barwars-right hidden-xs hidden-sm">
 
@@ -46,7 +50,7 @@
     <%= link_to t(".sign_in", default: "LOG IN"), "#", class: "navbar-barwars-item navbar-barwars-link barwars-signin", "data-toggle": "modal", "data-target": "#exampleModal" %>
     <% end %>
   </div>
-  <%= link_to "TODAYS DEALS", deals_path, id: "todays-deals-button" %>
+
 </div>
 
 
