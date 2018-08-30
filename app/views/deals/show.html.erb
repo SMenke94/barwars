@@ -1,5 +1,5 @@
 <% content_for :meta_title, "Come drink with me at #{@deal.bar.name}" %>
-<% content_for :meta_description, @deal.description %>
+<% content_for :meta_description, "#{@deal.description} for #{@deal.price} DKK"  %>
 <% content_for :meta_image, cl_image_path(@deal.bar.photo) %>
 
 
