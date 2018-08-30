@@ -1,6 +1,6 @@
 <div class="container text-center">
 
-  <%= form_tag("/deals", method: "get", class: "search-form") do %>
+  <%= form_tag("/loading", method: "get", class: "search-form") do %>
 
   <%= text_field_tag(:q, value = nil, required: true, oninvalid: "this.setCustomValidity('We need to know where you are!')", placeholder: "Your location", class: "form-control search text-center", id: "bar_address",
   style: "font-size: 14px; width: 300px; margin: 10px auto; margin-bottom: 5px; border-radius: 10px;")
