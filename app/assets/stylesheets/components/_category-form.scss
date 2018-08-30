@@ -50,12 +50,12 @@
     background: rgba(255,255,255,1);
   }
   &.active {
-    text-shadow: -0.1px 0 #233142, 0 0.1px #233142, 0.1px 0 #233142, 0 -0.1px #233142;
-    border: 2px solid #ffe030;
-    background: #ffe030;
-    color: #233142;
-    opacity: 1;
-  }
+  text-shadow: -0.1px 0 #233142, 0 0.1px #233142, 0.1px 0 #233142, 0 -0.1px #233142;
+  border: 2px solid #ffe030;
+  background: #ffe030;
+  color: #233142;
+  opacity: 1;
+}
   &:first-child {
     border-bottom-left-radius: 25px;
     border-top-left-radius: 25px;
