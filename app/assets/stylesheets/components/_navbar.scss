@@ -174,12 +174,13 @@ a.weekly-deals-button {
   }
 }
 
-a#todays-deals-button {
+#todays-deals-button {
   font-weight: lighter;
   border-radius: 0px;
   padding: 10px 5px;
   font-size: 10px;
   position: absolute;
+  top: 20px;
   color: white;
   left: 47%;
   border-top: 1px solid white;
