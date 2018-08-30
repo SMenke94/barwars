@@ -1,5 +1,10 @@
 <div id="mullet-wrapper" class="">
-  <%= image_tag "mullet.png", alt: "alttext", id: "mullet" %>
-  <%= image_tag "1883.png", alt: "alttext", id: "red-beer1" %>
-  <%= image_tag "1883.png", alt: "alttext", id: "red-beer2" %>
+  <%= image_tag "mullet.png", alt: "alttext", id: "mullet"%>
+   <%= link_to "#", id: "moving-beer1" do %>
+    <%= image_tag "logo.png", alt: "alttext", id: "red-beer1" %>
+  <% end %>
+  <%= link_to "#", id: "moving-beer2" do %>
+    <%= image_tag "logo.png", alt: "alttext", id: "red-beer2" %>
+  <% end %>
+  <%= image_tag "body.png", alt: "alttext", id: "body-body" %>
 </div>
