@@ -3,10 +3,10 @@ function refreshForm(event) {
   const button = event.currentTarget.querySelector("button");
   const faIcon = button.querySelector("i");
   let newHTML = "";
-  if (faIcon.classList.contains("opacity")) {
-    newHTML = faIcon.classList.remove('opacity');
+  if (faIcon.classList.contains("transparent-save-icon")) {
+    newHTML = '<i class="fas fa-heart"></i>';
   } else {
-    newHTML = faIcon.classList.add('opacity');
+    newHTML = '<i class="fas fa-heart transparent-save-icon"></i>';
   }
   button.innerHTML = newHTML;
 }
