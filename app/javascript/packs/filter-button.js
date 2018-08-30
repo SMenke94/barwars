@@ -17,3 +17,12 @@ jQuery(document).ready(function($) {
     });
   });
 });
+
+
+const logoButton = document.getElementById('logo-button');
+const mulletWrapper = document.getElementById('mullet-wrapper');
+
+
+logoButton.addEventListener('click', function() {
+  mulletWrapper.classList.toggle('is-visible');
+});
