@@ -8,7 +8,7 @@
             <h5><%= type.name %></h5>
             <i class="<%= type.fa_icon if type.fa_icon %>"></i>
           </label>
-          <input type="checkbox" class="hidden" value="<%= type.name %>" name="type[]" id="<%= "type_#{type.id}"%>">
+          <%= check_box_tag("type[]", type.name, params[:type], {id: "type_#{type.id}", class: "hidden"})  %>
         <% end %>
       </div>
       <ul class="list-inline">
