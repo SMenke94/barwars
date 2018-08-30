@@ -17,7 +17,7 @@ class DealsController < ApplicationController
       end
     end
 
-    if cookies[:dancing]
+    if params[:dancing]
       @deals = @deals.select do |deal|
         deal.bar.dancing
       end
