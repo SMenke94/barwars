@@ -5,12 +5,13 @@ User.destroy_all
 
 # A USER
 puts 'Creating user'
+url = "https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/32497592_10216332285839012_7014404072291696640_n.jpg?_nc_cat=0&oh=1f254c63ad7b10d964f94d0be7bc521e&oe=5BF5D6C4"
 user = User.new(
   full_name: "Amanda Schjørmann",
-  email: "amandaschjoermann@gmail.com",
+  email: "beerlover@gmail.com",
   password: "123456",
-  photo: "https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/32497592_10216332285839012_7014404072291696640_n.jpg?_nc_cat=0&oh=1f254c63ad7b10d964f94d0be7bc521e&oe=5BF5D6C4"
   )
+user.remote_photo_url = url
 user.save!
 puts '1 user done'
 

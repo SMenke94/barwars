@@ -1,9 +1,9 @@
-<%= simple_form_for([deal, user_deal], remote: true) do |f| %>
+<%= simple_form_for([deal, user_deal], remote: true, html: { class: "munkesnaps" }) do |f| %>
   <%= button_tag(type: 'submit', class: "save-icon") do %>
     <% if user_deal.persisted? %>
       <i class="fas fa-heart"></i>
-    <% else %>
-      <i class="fas fa-arrow-down"></i>
+    <%else %>
+      <i class="fas fa-heart transparent-save-icon"></i>
     <% end %>
   <% end %>
 <% end %>

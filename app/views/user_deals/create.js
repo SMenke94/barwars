@@ -1,1 +1,2 @@
-console.log("Halløj fra user_deals/create.js")
+var myDealsButton = document.querySelector(".my-deals-button");
+myDealsButton.classList.add('color-add');
