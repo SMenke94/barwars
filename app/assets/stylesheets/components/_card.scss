@@ -161,10 +161,10 @@ a.deal-bar-button:hover {
   right: 10px;
   top: 5px;
   color: white;
-  .opacity {
+  .transparent-save-icon {
     opacity: 0.4;
     &:hover {
-    opacity: 1;
+    opacity: 0.6;
   }
   }
   &:hover {
@@ -173,8 +173,8 @@ a.deal-bar-button:hover {
 }
 
 .color-add {
-  animation: colorchange 1.5s;
-  -webkit-animation: colorchange 1.5s;
+  animation: colorchange 1.2s;
+  -webkit-animation: colorchange 1.2s;
 }
 
 @keyframes colorchange {
@@ -182,16 +182,16 @@ a.deal-bar-button:hover {
     background-color: transparent;
   }
   25% {
-    color: #233142;
-    background-color: white;
+    border: 1px solid #ffe030;
+    background-color: #ffe030;
   }
   50% {
-    color: #233142;
-    background-color: white;
+    border: 1px solid #ffe030;
+    background-color: #ffe030;
   }
   75% {
-    color: #233142;
-    background-color: white;
+    border: 1px solid #ffe030;
+    background-color: #ffe030;
   }
   100% {
     background-color: transparent;
@@ -203,16 +203,16 @@ a.deal-bar-button:hover {
     background-color: transparent;
   }
   25% {
-    color: #233142;
-    background-color: white;
+    border: 1px solid #ffe030;
+    background-color: #ffe030;
   }
   50% {
-    color: #233142;
-    background-color: white;
+    border: 1px solid #ffe030;
+    background-color: #ffe030;
   }
   75% {
-    color: #233142;
-    background-color: white;
+    border: 1px solid #ffe030;
+    background-color: #ffe030;
   }
   100% {
     background-color: transparent;
