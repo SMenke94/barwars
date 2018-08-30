@@ -61,6 +61,11 @@
         <div class="row">
           <%= render 'shared/my-deal', user_deals: @user_deals %>
         </div>
+        <% if current_user.deals.count == 0 %>
+        <div class="no-current-deals">
+          <p>Currently no saved deals</p>
+        </div>
+      <% end %>
       </div>
 
       <% if current_user.deals.count > 2 %>
