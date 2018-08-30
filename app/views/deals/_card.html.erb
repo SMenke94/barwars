@@ -1,8 +1,8 @@
 <div class="row">
-  <% if deals.blank? %>
+  <% if @deals.blank? %>
     <h5 class="no-results">No Results Found. Please Try Another Search</h5>
   <% else %>
-    <% deals.each do |deal| %>
+    <% @deals.each do |deal| %>
         <div class="col-xs-3">
           <div class="deal-info deal-bg-img" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.2)), url(<%= deal.bar.photo %>);">
             <div class="type-icon">
@@ -32,7 +32,7 @@
                 <p class="footing"><%=deal.start_time.strftime("%H:%M") %></p>
               </li>
             </ul>
-            <%= link_to deal_path(deal), class: "deal-bar-button" do %>
+            <%= link_to deal_path(deal, q: params[:q], distance: params[:distance], type: params[:type], dancing: params[:dancing], smoking: params[:smoking]), class: "deal-bar-button" do %>
               <div id="bar-button">
                 <h4 class="deal-heading"><%= deal.type.name %>&nbsp;<span class="deal-price"> <%= "#{deal.price} #{'DKK' if deal.price}" %></span></h4>
                 <p class="deal-footing"><%= deal.description %></p>

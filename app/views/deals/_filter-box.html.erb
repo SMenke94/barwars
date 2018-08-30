@@ -1,8 +1,7 @@
 <div id="show-filters" class="text-center slideup">
 
   <div class="form-group">
-    <form action="<%= deals_path %>" method="get", class: "filter-form", data-remote="true">
-
+    <%= form_tag(deals_path, method: :get, remote: true, html: { class: "filter-form" }) do %>
       <div class="category-choices">
         <% @types.each do |type| %>
           <label for="<%= "type_#{type.id}" %>" class="<%= type.name %> type btn category-choice category-filter">
@@ -12,23 +11,25 @@
           <input type="checkbox" class="hidden" value="<%= type.name %>" name="type[]" id="<%= "type_#{type.id}"%>">
         <% end %>
       </div>
-          <ul class="list-inline">
-            <li>
-              <div class="check-choices">
-                <input type="checkbox" value="dancing" id="check01" name="dancing[]">
-                <label for="check01" class="dancing-filter">I wanna dance!</label>
-              </div>
-            </li>
-            <li>
-              <div class="check-choices">
-                <input type="checkbox" value="smoking" id="check02" name="smoking[]">
-                <label for="check02" class="smoking-filter">No smoking, please</label>
-            </li>
-              </div>
-          </ul>
+      <ul class="list-inline">
+        <li>
+          <div class="check-choices">
+            <input type="checkbox" value="dancing" id="check01" name="dancing[]">
+            <label for="check01" class="dancing-filter">I wanna dance!</label>
+          </div>
+        </li>
+        <li>
+          <div class="check-choices">
+            <input type="checkbox" value="smoking" id="check02" name="smoking[]">
+            <label for="check02" class="smoking-filter">Destroy my lungs, pls</label>
+        </li>
+          </div>
+      </ul>
 
+
+      <%= hidden_field_tag :q, params[:q] %>
+      <%= hidden_field_tag :distance, params[:distance] %>
       <input type="submit" value="Filter" class="btn filter-button hidden" id="goobypls" />
-    </form>
-
+    <% end %>
   </div>
 </div>
