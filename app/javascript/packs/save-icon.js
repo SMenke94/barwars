@@ -1,13 +1,12 @@
 
 function refreshForm(event) {
   const button = event.currentTarget.querySelector("button");
-  console.log(button);
   const faIcon = button.querySelector("i");
   let newHTML = "";
-  if (faIcon.classList.contains("fa-heart")) {
-    newHTML = '<i class="fas fa-heart"></i>'
+  if (faIcon.classList.contains("opacity")) {
+    newHTML = faIcon.classList.remove('opacity');
   } else {
-    newHTML = '<i class="fas fa-heart opacity"></i>'
+    newHTML = faIcon.classList.add('opacity');
   }
   button.innerHTML = newHTML;
 }
@@ -20,3 +19,11 @@ allForms.forEach((form) => {
   });
 });
 
+
+// ALERT TIMEOUT
+
+$(document).ready(function(){
+  setTimeout(function(){
+    $('#alert').remove();
+  }, 2500);
+ })

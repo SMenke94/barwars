@@ -14,4 +14,3 @@ loginButton.addEventListener('click', () => {
   userForms.classList.add('bounceRight');
 }, false);
 
-
